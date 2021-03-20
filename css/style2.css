@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-color: silver;
+	overflow: hidden;
+	color: #000;
+	font-size: 130%;
+}
+
+a {
+	color: #000;
+}
+
+img {
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
+
+#sideDiv {
+	position: fixed;
+	text-align: right;
+	top: 0px;
+	left: 0;
+	width: 20%;
+	height: 100%;
+	
+	background-color: #111;
+	transition: 0.75s ease;
+}
+
+#sideDiv:hover {
+	background-color: #222;
+}
+
+.menuText {
+	margin: 40px 20px 20px 10px;
+	font-style: oblique;
+	color: #FFF;
+}
+
+.menuPunkt {
+	margin: 20px 10px;
+	cursor: pointer;
+	transition: .3s ease;
+}
+
+.menuPunkt:hover {
+	font-size: 135%;
+}
+
+#inhalt {
+	position: absolute;
+	top: 0;
+	left: 20%;
+	width: 80%;
+	height: 100%;
+}

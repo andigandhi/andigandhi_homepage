@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ctf1</title>
+</head>
+<body style="width: 550px; height: 250px; overflow: hidden">
+	<div id="firstText" style="height: 250px">
+		<h2>Was ist das hier?</h2>
+		<p>Derzeit blühen die sogenannten Escape Rooms. Dabei wird versucht, als Gruppe durch Rätsel-Lösen einen Raum zu verlassen</p>
+		<p>Unter Hackern sind schon länger <a href="https://de.wikipedia.org/wiki/Capture_the_Flag#Computersicherheit" target="_blank">CTFs</a> beliebt, wobei versucht wird, sogenannte Flags zu finden um damit z.B. in Systeme einzudringen und dabei jede Menge zu lernen.</p>
+		<p>Ein genau solches CTF soll das hier werden, allerdings gezielt fach-fremdes Publikum ansprechen und spielerisch in die Welt des Hackens einführen.</p>
+		<button onClick="document.getElementById('firstText').style.display = 'none';">Weiter!</button>
+	</div>
+	
+	<div id="secondText" style="height: 250px">
+		<h2>Wie funktioniert das jetzt genau?</h2>
+		<p>Die ersten Rätsel bestehen alle darin, das Passwort für eine Homepage zu finden. Dabei muss sich teilweise mit dem Quellcode der Seite befasst werden.</p>
+		<p>Wenn du nicht weiterkommst, dann hilft ein Klick auf die <u style="color: blue">Hilfe</u></p>
+		<button onClick="document.getElementById('secondText').style.display = 'none';">Los geht's!</button>
+	</div>
+	
+	<div id="rat">
+		<div id="desText">
+			<p>Hallo! Mein Name ist Andreas und ich programmiere gerne hobbymäßig.</p>
+			<p>Ich das hier ist der Login zum privaten Bereich meiner Homepage. Ich bin mir sicher, dass niemand hierzu Zugriff bekommt, dadurch habe ich mit meiner hochtechnischen Sicherheit gesorgt.</p>
+		</div>
+
+		<!-- <input type="text" id="nameField" placeholder="Name" style="width: 100%"/><br> -->
+		<input type="password" id="passwordField" type="text" style="width: 100%" placeholder="Password"/><br>
+		<button onClick="login1()" style="width: 33%">Login</button>
+	</div>
+	
+	<script src="ctf1.js"></script>
+</body>
+</html>

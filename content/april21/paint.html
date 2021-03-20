@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/98.css" />
+	<link rel="stylesheet" href="style.css" />
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>Unbenanntes Dokument</title>
+</head>
+
+<body onLoad="updateBrush()" style="overflow: hidden;">
+	<canvas id="can" width="900px" height="500px" style="position: absolute; background-color: #FFF;"></canvas>
+	<div style="position: absolute; margin-top: 520px;">
+		
+		<label for="size">Pinsel-Grösse</label>
+		<input type="range" id="size" name="vol" min="1" max="30" onChange="updateBrush()">
+		
+		<label for="palette">Pinsel-Farbe</label>
+		<fieldset id="palette" style="margin-bottom: 10px;"></fieldset>
+		
+		<div id="resultDiv">
+			<input id="userInput" placeholder="@andigandhi" style="width: 400px;">
+			<button onClick="saveImage()" id="sendBtn" style="width: 400px;">SAVE</button>
+		</div>
+	</div>
+</body>
+	
+	<script>
+		
+		function saveImage() {
+			var username = document.getElementById("userInput").value;
+			
+			if (username == "") {
+				alert("Bitte gib doch deinen Instagram Namen an, damit ich weiß wer gewonnen hat :)");
+				return;
+			}
+			
+			var titel = prompt("Willst du deinem Werk noch einen Namen geben?", "Komposition 69");
+			
+			var dataURL = document.getElementById('can').toDataURL("image/png");
+			
+			$.ajax({
+				type: "POST",
+				url: "paint-handler.php",
+				data: { 
+					imgBase64: dataURL,
+					user: username,
+					title: titel
+				}
+			}).done(function(response) {
+				document.getElementById("resultDiv").innerHTML = response;
+			});
+			document.getElementById("sendBtn").style.display = "none";
+		}
+
+		
+		
+		// =============
+		// == Globals ==
+		// =============
+		const canvas = document.getElementById('can');
+		const canvasContext = canvas.getContext('2d');
+		const state = {
+		  mousedown: false
+		};
+		
+		canvasContext.fillStyle = "white";
+		canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+		let strokeStyle = '';
+
+		canvas.addEventListener('mousedown', handleWritingStart);
+		canvas.addEventListener('mousemove', handleWritingInProgress);
+		canvas.addEventListener('mouseup', handleDrawingEnd);
+		canvas.addEventListener('mouseout', handleDrawingEnd);
+
+		canvas.addEventListener('touchstart', handleWritingStart);
+		canvas.addEventListener('touchmove', handleWritingInProgress);
+		canvas.addEventListener('touchend', handleDrawingEnd);
+
+		function handleWritingStart(event) {
+		  event.preventDefault();
+
+		  const mousePos = getMosuePositionOnCanvas(event);
+
+		  canvasContext.beginPath();
+
+		  canvasContext.moveTo(mousePos.x, mousePos.y);
+
+		  canvasContext.fill();
+
+		  state.mousedown = true;
+		}
+
+		function handleWritingInProgress(event) {
+		  event.preventDefault();
+
+		  if (state.mousedown) {
+			const mousePos = getMosuePositionOnCanvas(event);
+
+			canvasContext.lineTo(mousePos.x, mousePos.y);
+			canvasContext.stroke();
+		  }
+		}
+
+		function handleDrawingEnd(event) {
+		  event.preventDefault();
+
+		  if (state.mousedown) {
+			canvasContext.stroke();
+		  }
+
+		  state.mousedown = false;
+		}
+
+		
+		
+		function getMosuePositionOnCanvas(event) {
+			const clientX = event.clientX || event.touches[0].clientX;
+			const clientY = event.clientY || event.touches[0].clientY;
+			const { offsetLeft, offsetTop } = event.target;
+			const canvasX = clientX - offsetLeft;
+			const canvasY = clientY - offsetTop;
+
+			return { x: canvasX, y: canvasY };
+		}
+		
+		function updateBrush() {
+			canvasContext.lineWidth = document.getElementById("size").value;
+			canvasContext.strokeStyle = $("input[type='radio'][name='color']:checked").val();
+			return;
+		}
+		
+		function createPalette() {
+			//const colors = ['#000', '#F00', '#0F0', '#00F', '#FF0', '#F0F', '#0FF'];
+			const colors = ['#000', '#874313', '#03a108', '#ad0aa8', '#1196d4', '#d41111', '#edca05'];
+			var palette = document.getElementById("palette");
+			for (var i = 0; i < colors.length; i++) {
+				var c = colors[i];
+				palette.innerHTML += '<input type="radio" id="'+c+'" name="color" value="'+c+'" onChange="updateBrush()"><label for="'+c+'"><div class="color-box" style="background-color: '+c+';"></div></label> ';
+			}
+			document.getElementById("#000").checked = "true";
+		}
+		
+		createPalette();
+
+    </script>
+</html>

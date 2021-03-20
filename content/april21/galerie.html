@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>Galerie</title>
+	<style>
+		.galerieItem {
+			vertical-align:middle;
+			cursor: pointer;
+			margin: 10px;
+		}
+		
+		.galNo {
+			font-size: 50px;
+			margin-bottom: 100px;
+			margin-right: 50px;
+		}
+		
+		.galTit {
+			font-size: 20px;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="bilderGalerie" style="text-align: center">
+		<h1>Die Kunstwerke</h1>
+		Stimme für deine Lieblingswerke ab indem du auf die schönsten Werke klickst!<br>
+		Jede Person kann <b>jedem Kunstwerk maximal eine Stimme</b> geben.<br><br><br>
+	</div>
+	
+	<script>
+		function upvote(id) {
+			$.ajax({
+				type: "POST",
+				url: "upvoteHandler.php",
+				data: { 
+					picNo: id
+				}
+			}).done(function(response) {
+				if (response == "OK.") {
+					var spanElement = document.getElementById("p"+id);
+					spanElement.innerHTML = pad(parseInt(spanElement.innerHTML) + 1);
+				} else {
+					alert("Hast du schonmal dafür abgestimmt?");
+				}
+			});
+		}
+		
+		function ladeBilder(jsonObj) {
+			var galDiv = document.getElementById("bilderGalerie");
+			for (var i = 0; i < jsonObj.length; i++) {
+				//var titel = (jsonObj[i]["title"]==undefined?"Ohne Titel":jsonObj[i]["title"]);
+				var titel = jsonObj[i]["user"]  + " - " +  (jsonObj[i]["title"]==undefined?"Ohne Titel":jsonObj[i]["title"]);
+				
+				var spanNo = '<img alt="" src="icons/up.png"><span class="galNo" id="p'+jsonObj[i]["name"]+'">'+pad(jsonObj[i]["points"])+'</span>';
+				galDiv.innerHTML += spanNo+'<img alt="" src="bildergalerie/'+jsonObj[i]["name"]+'.png" width="450px" class="galerieItem" onClick="upvote(\''+jsonObj[i]["name"]+'\')"><br>';
+				galDiv.innerHTML += '<span class="galTit">'+titel+'</span><br><br>'
+			}
+		}
+		
+		function getPicList() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+			  if (this.readyState == 4 && this.status == 200) {
+				var myObj = JSON.parse(this.responseText);
+				  
+				myObj.sort(function(a, b) {
+				  return b["points"] - a["points"];
+				});  
+				  
+				ladeBilder(myObj)
+			  }
+			};
+			xmlhttp.open("GET", "bildergalerie/pictures.txt?"+Math.floor(Math.random()*10000), true);
+			xmlhttp.send(); 
+		}
+		
+		function pad(num) {
+			var s = "00" + num;
+			return s.substr(s.length-3);
+		}
+		
+		getPicList();
+	</script>
+</body>
+</html>
