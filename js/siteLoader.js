@@ -25,8 +25,8 @@ var siteLinks = [
 // The Icons on the desktop, images have to be deposited in /img/ico/
 // ['Name / Name.png','link']
 var icons = [
-	['Chat', 'content/chat.html'],
-	['Paint', 'content/paint.html'],
+	['Chat', 'content/chat/chat.html'],
+	['Paint', 'content/paint/paint.html'],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
