@@ -1,7 +1,7 @@
 <?php 
 	function combine_images() {
-		$bg_img = imagecreatefrompng('paint/paint.png');
-		$fr_img = imagecreatefrompng('paint/paint_temp.png');
+		$bg_img = imagecreatefrompng('paint.png');
+		$fr_img = imagecreatefrompng('paint_temp.png');
 		
 		imagealphablending($bg_img, true);
 		imagesavealpha($bg_img, true);
