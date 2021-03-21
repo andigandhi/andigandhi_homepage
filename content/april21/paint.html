@@ -49,6 +49,9 @@
 				}
 			}).done(function(response) {
 				document.getElementById("resultDiv").innerHTML = response;
+				if (response == "Erfolgreich!") {
+				    alert("Das schaut gut aus! \n Die Abstimmung geht dann am 02. April um 16:20 Uhr los!");
+				}
 			});
 			document.getElementById("sendBtn").style.display = "none";
 		}
@@ -132,7 +135,6 @@
 		}
 		
 		function createPalette() {
-			//const colors = ['#000', '#F00', '#0F0', '#00F', '#FF0', '#F0F', '#0FF'];
 			const colors = ['#000', '#874313', '#03a108', '#ad0aa8', '#1196d4', '#d41111', '#edca05'];
 			var palette = document.getElementById("palette");
 			for (var i = 0; i < colors.length; i++) {
