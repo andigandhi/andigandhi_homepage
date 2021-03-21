@@ -14,7 +14,7 @@
 			fwrite($fp, "\r\n");  
 			fclose($fp);
 			
-			$fp = fopen('chatlog.txt', 'a');
+			$fp = fopen('/andigandhi_files/chatlog.txt', 'a');
 			fwrite($fp, date("Y-m-d H:i").' '.$_SERVER['REMOTE_ADDR'].', '.$username.','.$msg);  
 			fwrite($fp, "\r\n");  
 			fclose($fp);
