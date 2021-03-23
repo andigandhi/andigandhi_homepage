@@ -1,8 +1,5 @@
 <?php
-$date_now = new DateTime();
-$date2    = new DateTime("02/04/2021");
-
-if ($date_now > $date2) {
+if (new DateTime() > new DateTime("2021-04-02 11:00:00")) {
     include("galerie.html");
 }else{
     include("paint.html");

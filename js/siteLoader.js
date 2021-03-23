@@ -4,8 +4,8 @@ var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
 	['Livestream', 'content/stream.html', 820, 490],
-	['April 2021', 'content/april21/paint.html', 920, 700],
-	['April Galerie', 'content/april21/galerie.html', 920, 700],
+	['April 2021', 'content/april21/april.html', 920, 700],
+	
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
@@ -16,7 +16,7 @@ var siteLinks = [
 	//['Programmieren', ''],
 	//['Konsole', 'content/CTF/ctf1.html', 580, 300],
 	['Sonstiges', ''],
-	['Lebenslauf', 'content/business/lebenslauf.html'],
+	//['Lebenslauf', 'content/business/lebenslauf.html'],
 	['Impressum', 'content/impressum.html'],
 	['Datenschutz', 'content/datenschutz.html'],
 	//['Einstellungen', 'content/settings.html'],
@@ -27,6 +27,7 @@ var siteLinks = [
 var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
+	
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
@@ -288,7 +289,7 @@ createIcons();
 // Builds the menu
 build_menu();
 // Opens first Window
-fillWindow(1);
+fillWindow(3);
 
 openLinkedWindow();
 
