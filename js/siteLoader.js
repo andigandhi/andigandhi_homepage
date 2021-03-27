@@ -4,7 +4,7 @@ var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
 	['Livestream', 'content/stream.html', 820, 490],
-	['April 2021', 'content/april21/april.php', 920, 700],
+	['April 2021', 'content/april21/index.php', 920, 700],
 	
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
@@ -27,6 +27,7 @@ var siteLinks = [
 var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
+	['April 2021', 'content/april21/index.php', 920, 700],
 	
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
