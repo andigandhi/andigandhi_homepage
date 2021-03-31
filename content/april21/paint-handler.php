@@ -8,7 +8,7 @@
 		array_push($pictures, $newData);
 		
 		file_put_contents('bildergalerie/pictures.txt', json_encode($pictures));
-		file_put_contents('/andigandhi_files/aprilBak/pictures.txt', json_encode($pictures));
+		file_put_contents('../../../andigandhi_files/aprilBak/pictures.txt', json_encode($pictures));
 	}
 
 	define('UPLOAD_DIR', 'bildergalerie/');
@@ -21,7 +21,7 @@
 	$lineNo = count($pictures);
 
 	$file = UPLOAD_DIR . $lineNo .'.png';
-	file_put_contents('/andigandhi_files/aprilBak/'.$lineNo.'.png', $data);
+	file_put_contents('../../../andigandhi_files/aprilBak/'.$lineNo.'.png', $data);
 	$success = file_put_contents($file, $data);
 
 	addJSON($pictures, $lineNo);

@@ -45,15 +45,15 @@
 					var spanElement = document.getElementById("p"+id);
 					spanElement.innerHTML = pad(parseInt(spanElement.innerHTML) + 1);
 				} else {
-					alert("Hast du schonmal dafür abgestimmt?");
+					alert("Hast du vielleicht schonmal dafür abgestimmt?");
 				}
 			});
 		}
 		
+		// Loads all the picture files of the gallery
 		function ladeBilder(jsonObj) {
 			var galDiv = document.getElementById("bilderGalerie");
 			for (var i = 0; i < jsonObj.length; i++) {
-				//var titel = (jsonObj[i]["title"]==undefined?"Ohne Titel":jsonObj[i]["title"]);
 				var titel = jsonObj[i]["user"]  + " - " +  (jsonObj[i]["title"]==undefined?"Ohne Titel":jsonObj[i]["title"]);
 				
 				var spanNo = '<img alt="" src="icons/up.png"><span class="galNo" id="p'+jsonObj[i]["name"]+'">'+pad(jsonObj[i]["points"])+'</span>';
@@ -62,6 +62,7 @@
 			}
 		}
 		
+		// Gets the List of all the pictures of the gallery
 		function getPicList() {
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
@@ -79,6 +80,7 @@
 			xmlhttp.send(); 
 		}
 		
+		//Add leading zeros to the upvote numbers
 		function pad(num) {
 			var s = "00" + num;
 			return s.substr(s.length-3);
