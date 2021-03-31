@@ -32,7 +32,7 @@ var icons = [
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
-	['cooler Priester', 'https://andigandhi.ddns.net/cooler_priester/'],
+	//['cooler Priester', 'https://andigandhi.ddns.net/cooler_priester/'],
 	['Coole Websites', 'content/links.html'],
 	['', ''],
 	['WLAN-Router', 'content/wlan.html'],
@@ -125,7 +125,7 @@ function fillWindow(no, w, h) {
 		h = siteLinks[no][3];
 	}
 	
-	var left = Math.floor((Math.random() * 20) + 30);
+	var left = Math.floor(Math.random() * 20);
 	var top = Math.floor((Math.random() * 15) + 1);
 	
 	if (typeof(w) === 'undefined') {
