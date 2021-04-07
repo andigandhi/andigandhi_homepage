@@ -5,21 +5,15 @@ var siteLinks = [
 	['Start / News', 'content/index.html'],
 	['Livestream', 'content/stream.html', 820, 490],
 	['April 2021', 'content/april21/index.php', 920, 700],
-	
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['DJ Gion Porno', 'content/gigs.html'],
 	['Creepy Stuff', 'content/image.html'],
-	//['Archiv (noch nicht 100% kompatibel!)',''],
-	//['Corona-Projekte', 'corona/index.html'], 
-	//['Programmieren', ''],
-	//['Konsole', 'content/CTF/ctf1.html', 580, 300],
 	['Sonstiges', ''],
 	//['Lebenslauf', 'content/business/lebenslauf.html'],
 	['Impressum', 'content/impressum.html'],
 	['Datenschutz', 'content/datenschutz.html'],
-	//['Einstellungen', 'content/settings.html'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
@@ -28,18 +22,15 @@ var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
 	['April 2021', 'content/april21/index.php', 920, 700],
-	
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
-	//['cooler Priester', 'https://andigandhi.ddns.net/cooler_priester/'],
-	['Coole Websites', 'content/links.html'],
+	//['Coole Websites', 'content/links.html'],
 	['', ''],
 	['WLAN-Router', 'content/wlan.html'],
-	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'],
+	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true', 816, 210],
 	['Schach', 'content/chess/index.html', 500, 560],
-	['Minesweeper', 'http://www.freeminesweeper.org/minecore.html'],
-	//['CTF', 'content/CTF/ctf1.html', 580, 300],
+	['Minesweeper', 'http://www.freeminesweeper.org/minecore.html', 220, 260],
 ];
 
 
