@@ -37,7 +37,7 @@ var icons = [
 	['', ''],
 	['WLAN-Router', 'content/wlan.html'],
 	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'],
-	['Solitaire', 'http://frvr.com/play/solitaire/'],
+	['Schach', 'content/chess/index.html', 500, 560],
 	['Minesweeper', 'http://www.freeminesweeper.org/minecore.html'],
 	//['CTF', 'content/CTF/ctf1.html', 580, 300],
 ];
