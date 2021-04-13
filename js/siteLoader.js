@@ -5,6 +5,7 @@ var siteLinks = [
 	['Start / News', 'content/index.html'],
 	['Livestream', 'content/stream.html', 820, 490],
 	['April 2021', 'content/april21/index.php', 920, 700],
+	['Digitales Jugge <3', 'content/jz/index.php'],
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
@@ -21,6 +22,7 @@ var siteLinks = [
 var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
+	['Juggeparty', 'content/jz/index.php'],
 	['April 2021', 'content/april21/index.php', 920, 700],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
