@@ -14,7 +14,7 @@ $radioNo = $_GET["no"] ?? -1;
 
 if ($radioNo >= 0) {
     $inhalt = '<?php
-file_put_contents("music_log.txt", date("Y-m-d h:i:sa")." ".md5($_SERVER[\'REMOTE_ADDR\']), FILE_APPEND);
+file_put_contents("music_log.txt", date("Y-m-d h:i:sa")." ".md5($_SERVER[\'REMOTE_ADDR\']).\\n, FILE_APPEND);
 header("HTTP/1.1 302 Found");
 header("location: ';
     $inhalt .= $radios[$radioNo];
