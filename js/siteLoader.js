@@ -22,7 +22,7 @@ var siteLinks = [
 var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
-	['Juggeparty', 'content/jz/index.php'],
+	['Juggeparty', 'content/jz/jzParty.html'],
 	['April 2021', 'content/april21/index.php', 920, 700],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
