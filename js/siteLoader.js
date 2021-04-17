@@ -5,7 +5,7 @@ var siteLinks = [
 	['Start / News', 'content/index.html'],
 	['Livestream', 'content/stream.html', 820, 490],
 	['April 2021', 'content/april21/index.php', 920, 700],
-	['Digitales Jugge <3', 'content/jz/index.php'],
+	['Digitales Jugge <3', 'content/jz/jzParty.html'],
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
