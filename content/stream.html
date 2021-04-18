@@ -6,55 +6,8 @@
 </head>
 
 <body style="overflow: hidden">
-	
-	<div id="countdownDiv" style="text-align: center; margin-top: 50px">
-		<h2><b>Nächster Livestream</b></h2>
-		<hr><br>
-		<div id="time" style="text-align: center; color: red; font-size: 40px">-- -- --</div>
-		<div style="text-align: left; margin-top: 100px">
-			<p>19:00 - Pauli</p>
-			<p>19:30 - Jannis b2b Dome</p>
-			<p>21:00 - Thesi</p>
-			<p>21:30 - andigandhi</p>
-		</div>
-	</div>
-	<div id="videoDiv" style="display: none">
-			<iframe width="800" height="450" type="text/html" src="https://www.youtube.com/embed/eE6CzpqZCAg?autoplay=1&start=11429" frameborder="0" allowfullscreen ></iframe>
-	</div>
-	
-	<script>
-	// Set the date we're counting down to
-	//var countDownDate = new Date("Mar 27, 2020 23:59:59").getTime();
-	var countDownDate = new Date("Dec 20, 2020 19:00:00").getTime();
-	// Update the count down every 1 second
-	var x_count = setInterval(function() {
-		calculateTime();
-	}, 1000);
-
-	calculateTime();
-
-	function calculateTime() {
-		// Get today's date and time
-	  var now = new Date().getTime();
-
-	  // Find the distance between now and the count down date
-	  var distance = (countDownDate - now)/1000;
-
-	  var hours = Math.floor(distance / (60 * 60)) ;
-	  var minutes = Math.floor((distance % (60 * 60)) / 60);
-	  var seconds = Math.floor(distance % (60 * 60) - 60 * minutes);
-
-	  // Display the result in the element with id="demo"
-	  document.getElementById("time").innerHTML = (hours>9?hours:("0"+hours)) + ":" + (minutes>9?minutes:("0"+minutes)) + ":" + (seconds>9?seconds:("0"+seconds));
-		
-	  // If the count down is finished, write some text
-	  if (distance < 4000) {
-		clearInterval(x_count);
-		document.getElementById("countdownDiv").style.display = "none";
-		document.getElementById("videoDiv").style.display = "block";
-	  }
-	}
-</script>
+	<!-- <iframe width="800" height="450" type="text/html" src="https://www.youtube.com/embed/eE6CzpqZCAg?autoplay=1&start=11429" frameborder="0" allowfullscreen ></iframe> -->
+	<iframe width="800" height="450" type="text/html" src="https://www.youtube.com/embed/pZnt6GPeX0c?autoplay=1" frameborder="0" allowfullscreen ></iframe>
 </body>
 
 
