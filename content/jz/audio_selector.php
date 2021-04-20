@@ -31,8 +31,8 @@ function telegram($msg) {
     return $result;
 }
 
-$bot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
-$chatid = 698532846;
+$telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
+$telegramchatid = 698532846;
 
 telegram(date("d.m., H:i")." Uhr: Sichtung im Jugge");
 
