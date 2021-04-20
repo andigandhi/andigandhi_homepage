@@ -24,8 +24,8 @@ header("location: ';
     $inhalt .= $radios[$radioNo];
     $inhalt .= '");
 ?>';
-
     file_put_contents("audio.php", $inhalt);
+    file_put_contents("lastVisit.txt", date("m.d.y H:i")."Uhr");
     echo("Der Sender wurde erfolgreich geändert!</body></html>");
     exit;
 }
