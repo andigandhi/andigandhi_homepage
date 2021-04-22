@@ -18,9 +18,6 @@ $radioNo = $_GET["no"] ?? -1;
 
 if ($radioNo >= 0) {
     $inhalt = '<?php
-file_put_contents("music_log.txt", date("Y-m-d h:i:sa")." ".md5($_SERVER[\'REMOTE_ADDR\'])."\\n", FILE_APPEND);
-file_put_contents("lastVisit.txt", date("d.m., H:i")." Uhr");
-
 
 function telegram($msg) {
     global $telegrambot,$telegramchatid;
@@ -31,10 +28,14 @@ function telegram($msg) {
     return $result;
 }
 
-$telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
-$telegramchatid = 698532846;
+if ( (time() - strtotime(file_get_contents("lastVisit.txt"))) > 900 )
+    file_put_contents("lastVisit.txt", date("Y-m-d h:i:sa"));
 
-telegram(date("d.m., H:i")." Uhr: Sichtung im Jugge");
+    $telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
+    $telegramchatid = -1001358400628;
+
+    echo("Sichtung im Jugge (" . substr( md5($_SERVER[\'REMOTE_ADDR\']), -4) .")");
+    telegram("a");
 
 header("HTTP/1.1 302 Found");
 header("location: ';
