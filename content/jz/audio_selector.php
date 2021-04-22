@@ -28,13 +28,12 @@ function telegram($msg) {
     return $result;
 }
 
+$telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
+$telegramchatid = -1001358400628;
+
 if ( (time() - strtotime(file_get_contents("lastVisit.txt"))) > 900 )
     file_put_contents("lastVisit.txt", date("Y-m-d h:i:sa"));
-
-    $telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
-    $telegramchatid = -1001358400628;
-
-    telegram(time() . "   " . strtotime(file_get_contents("lastVisit.txt")))
+    telegram(time() - strtotime(file_get_contents("lastVisit.txt")));
     telegram("Sichtung im Jugge (" . substr( md5($_SERVER[\'REMOTE_ADDR\']), -4) .")");
 
 header("HTTP/1.1 302 Found");
