@@ -33,7 +33,7 @@ function telegram($msg) {
 
 if ( ($_POST["message"] ?? "") != "" ) {
     $name = $_POST["name"] ?? "anon";
-    telegram($name . ": " . $_POST["msg"]);
+    telegram($name . ": " . $_POST["message"]);
     echo "<br><br><br><h1>Alles Paletti!</h1>";
 }
 ?>
