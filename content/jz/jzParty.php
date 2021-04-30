@@ -12,10 +12,10 @@
     <!--<a href="https://meet.ffmuc.net/globalpauligeburtstag180421" target="_blank" rel="noopener noreferrer">Für schwache PCs: Nur der Dancefloor-Meetingraum</a><br><br><br>-->
     <a href="https://meet.jit.si/globalpauligeburtstag180421" target="_blank" rel="noopener noreferrer">Für schwache PCs: Nur der Dancefloor-Meetingraum</a><br><br><br>
 	<b><a href="audio.php">Der Musik-Livestream</a></b><br><br><br><br>
-	<p><b>Meine Kamera geht irgendwie nicht?!<\b><\p>
-    <p>Hast du Firefox installiert? Andere Browser haben leider Probleme mit der Kamera. Ansonsten: Hast du der Website gestattet auf die Kamera und das Mikrofon zuzugreifen?<\p>
+	<p><b>Meine Kamera geht irgendwie nicht?!</b></p>
+    <p>Hast du Firefox installiert? Andere Browser haben leider Probleme mit der Kamera. Ansonsten: Hast du der Website gestattet auf die Kamera und das Mikrofon zuzugreifen?</p>
 
-    <p><b>Meine Musik klingt irgendwie komisch und springt wie eine kaputte Schallplatte rum :(<\b><\p>
-    <p>Dieses Problem entsteht manchmal wenn man das Jugge verlässt und dann wieder neu betritt. Abhilfe schafft es, Firefox zu schließen und nochmal eu auf die Seite jz.andigandhi.ga zu gehen.<\p>
+    <p><b>Meine Musik klingt irgendwie komisch und springt wie eine kaputte Schallplatte rum :(</b></p>
+    <p>Dieses Problem entsteht manchmal wenn man das Jugge verlässt und dann wieder neu betritt. Abhilfe schafft es, Firefox zu schließen und nochmal eu auf die Seite jz.andigandhi.ga zu gehen.</p>
 </body>
 </html>
