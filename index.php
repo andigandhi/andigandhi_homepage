@@ -1,3 +1,19 @@
+<?php
+
+function telegram($msg) {
+    $telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
+    $telegramchatid = 698532846;
+
+    $url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
+    $options=array("http"=>array("method"=>"POST","header"=>"Content-Type:application/x-www-form-urlencoded\r\n","content"=>http_build_query($data),),);
+    $context=stream_context_create($options);
+    $result=file_get_contents($url,false,$context);
+    return $result;
+}
+
+telegram(date("H:i") . " Uhr: Seitenaufruf von " . $_SERVER['REMOTE_ADDR']);
+?>
+
 <!doctype html>
 <html>
 <head>
