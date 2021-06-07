@@ -2,7 +2,7 @@
 
 function telegram($msg) {
     $telegrambot = "1844809600:AAFX9brZOyu7Xz-qvNdLbewHiSq31SNGJMc";
-    $telegramchatid = 507048236;
+    $telegramchatid = 698532846;
 
     $url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
     $options=array("http"=>array("method"=>"POST","header"=>"Content-Type:application/x-www-form-urlencoded\r\n","content"=>http_build_query($data),),);
