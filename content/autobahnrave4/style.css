@@ -1,0 +1,49 @@
+/* CSS Document */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	text-align: center;
+	font-size: 130%;
+	font-family: "Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
+	
+	background-image: url();
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	color: #FFF;
+	overflow: hidden;
+}
+
+
+#dabeiBtn {
+	margin-top: 10%;
+}
+
+#wirdSpan {
+	color: #AAA;
+}
+
+#contentDiv {
+	margin: 10%;
+}
+
+.formDiv {
+	width: 60%;
+	padding-top: 100px;
+	padding-bottom: 100%;
+	padding: 100px 5% 100% 5%;
+	margin-left: 20%;
+	color: #FFF;
+	background-color: rgba(0,0,0,0.5)
+}
+
+@media only screen and (max-width: 1000px) {
+	.formDiv {
+		width: 100%;
+		margin-left: 0%;
+	}
+}
