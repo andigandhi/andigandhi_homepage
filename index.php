@@ -11,7 +11,14 @@ function telegram($msg) {
     return $result;
 }
 
-telegram(date("H:i") . " Uhr: Seitenaufruf von " . $_SERVER['REMOTE_ADDR']);
+function getIpAddr() {
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+	return $details->city;	
+}
+
+telegram(date("H:i") . " Uhr: " . $_SERVER['REMOTE_ADDR'] . " (" . getIpAddr() . ")");
+
 ?>
 
 <!doctype html>
