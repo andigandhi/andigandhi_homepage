@@ -12,14 +12,16 @@
 <body onLoad="loadSite();">
 	<div id="contentDiv">
 		<h1 style="color: #FFF">2021 wird <b><span id="wirdSpan">Richtig Nice</span></b></h1>
-		<a href="#form"><button id="dabeiBtn" class="btn btn-light" style="background-color: rgba(0,0,0,0); color: #FFF"><b>da bin ich dabei!</b></button></a>
+		<a href="#form"><button id="dabeiBtn" class="btn btn-light" style="background-color: rgba(0,0,0,0); color: #FFF; margin-right: 40px;"><b>anmelden</b></button></a>
+		<a href="#lineup"><button id="lineupBtn" class="btn btn-light" style="background-color: rgba(0,0,0,0); color: #FFF"><b>lineup</b></button></a>
 		<div id="form" class="formDiv">
+			<a href="#"><button class="btn btn-light" style="background-color: rgba(0,0,0,0); color: #FFF; margin-bottom: 5%;"><b>zurück</b></button></a><br>
 			<!-- initial Form -->
 			<label>Dein Name</label><input type="text" id="nameTxt" class="form-control" name="name" placeholder="Name" required="required">
 			<br>
 			<label>Handynummer</label><input type="text" id="fonTxt" class="form-control" name="telefon" placeholder="0420 69691312" required="required">
 			<br>
-			<input id="bandChk" class="form-check-input" type="checkbox" name="chk1" value="chk1"><label class="form-check-label">Ich will ein Stoff-Bändchen!</label>
+			<input id="bandChk" class="form-check-input" type="checkbox" name="chk1" value="chk1"><label class="form-check-label"style="margin-left: 10px;">Bis zum 14. August bin ich voll geimpft</label>
 			<br><br><br>
 			<a href="#submitted" onclick="return sendForm()"><button type="submit" class="btn btn-primary">Abschicken</button></a>
 		</div>
@@ -32,6 +34,12 @@
 				In der Zwischenzeit kannst du dir gerne nochmal mein Set vom letzten Jahr anhören ;)<br>
 				<a href="https://soundcloud.com/andi_gandhi/a94-nie">HIER LANG</a>
 			</div>
+		</div>
+
+		<div id="lineup" class="formDiv">
+			<a href="#"><button class="btn btn-light" style="background-color: rgba(0,0,0,0); color: #FFF; margin-bottom: 5%;"><b>zurück</b></button></a><br>
+			<h1>lineup</h1><br>
+			<p>???</p>
 		</div>
 	</div>
 </body>
