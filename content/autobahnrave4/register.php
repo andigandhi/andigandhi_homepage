@@ -1,6 +1,6 @@
 <?php
 	function telegram($msg) {
-		$telegrambot = "1844809600:AAFX9brZOyu7Xz-qvNdLbewHiSq31SNGJMc";
+		$telegrambot = file_get_contents('../../../andigandhi_files/bottoken.txt');
 		$telegramchatid = 698532846;
 	
 		$url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
