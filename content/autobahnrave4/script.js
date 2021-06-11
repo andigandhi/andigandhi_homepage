@@ -4,14 +4,14 @@ function loadSite() {
 	document.getElementById("form").style.marginTop = $(window).height() + "px";
 	document.getElementById("form").style.height = $(window).height() + "px";
 	document.getElementById("submitted").style.height = $(window).height() + "px";
-	loadRndBg();
+	
 	
 	txtSpan = document.getElementById("wirdSpan");
 	shuffler = setInterval(function(){ shuffleRndText() }, 200);
 }
 
 function loadRndBg() {
-	var bgSrc = "img/"+Math.floor(Math.random() * 3 + 2018) + ".jpg";
+	var bgSrc = "img/"+Math.floor(Math.random() * 4) + ".jpg";
 	document.body.style.backgroundImage = "url('"+bgSrc+"')";
 }
 
