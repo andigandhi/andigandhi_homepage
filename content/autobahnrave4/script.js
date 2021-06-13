@@ -40,6 +40,8 @@ function sendForm() {
     };
     xmlhttp.open("GET", "register.php?q="+name+"__"+fon+"__"+band, true);
     xmlhttp.send();
+
+	window.location = "https://andigandhi.ga/content/autobahnrave4/#submitted";
 	
 	return true;
 }
