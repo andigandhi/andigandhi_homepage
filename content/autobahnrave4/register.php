@@ -1,7 +1,7 @@
 <?php
 	function telegram($msg) {
 		include('../../telegramVar.php');
-		$telegramchatid = 698532846;
+		$telegramchatid = -338197126; //698532846;
 	
 		$url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
 		$options=array("http"=>array("method"=>"POST","header"=>"Content-Type:application/x-www-form-urlencoded\r\n","content"=>http_build_query($data),),);
