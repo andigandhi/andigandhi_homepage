@@ -26,7 +26,7 @@ telegram(date("H:i") . " Uhr: " . $_SERVER['REMOTE_ADDR'] . " (" . getIpAddr() .
 <html>
 <head>
 	<meta charset="utf-8">
-	<!-- <meta http-equiv="refresh" content="0; url=https://andigandhi.ga/content/autobahnrave4/" /> -->
+	<meta http-equiv="refresh" content="0; url=https://andigandhi.ga/content/autobahnrave4/" />
 	<link rel="stylesheet" href="https://unpkg.com/98.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
