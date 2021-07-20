@@ -45,6 +45,8 @@ function sendForm() {
 
 	window.location = "https://andigandhi.ga/content/autobahnrave4/#submitted";
 	
+	alert('Durch die ungewisse Corona-Lage habe ich aktuell die Anmeldung pausiert. Du stehst aber auf der Warteliste!');
+	
 	return true;
 }
 
