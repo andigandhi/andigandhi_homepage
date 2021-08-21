@@ -1,0 +1,26 @@
+<h1>Rückblick auf den Autobahnrave 2021</h1>
+
+<p>Vielen Lieben Dank an alle, die so tatkräftig mitgeholfen haben dieses Event zu ermöglichen!</p>
+
+<h2>Sets der DJs:</h2>
+
+<p><a href="https://soundcloud.com/gurkenguenni/autostrada-rave-2021" target="_blank">Gurkengünther</a></p>
+<p><a href="https://soundcloud.com/pauline-l-we/autobahnrave2021" target="_blank">Pauli Powers</a></p>
+
+<h2>Bilder vom Rave (klicken für ein zufälliges Bild):</h2>
+
+<img id="randomAutoPic" src="" onclick="loadRandomPic()">
+
+<script>
+    var imgElem = document.getElementById("randomAutoPic");
+
+    function loadRandomPic() {
+        var no = Math.floor((Math.random()*123))+1;
+        imgElem.src = "web/"+no+".jpg"
+        console.log(imgElem.src);
+    }
+
+    loadRandomPic();
+</script>
+
+<p>Vielen Dank an Iris un Philipp!</p>
