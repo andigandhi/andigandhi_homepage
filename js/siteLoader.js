@@ -273,7 +273,7 @@ function openLinkedWindow() {
 	let no = window.location.search.substr(1);
 	if (no === "") {return;}
 	no = parseInt(no);
-	if (no>siteLinks.length) {
+	if (no>=siteLinks.length) {
 		fillWindow(icons[no-siteLinks.length])
 	} else {
 		fillWindow(no);
