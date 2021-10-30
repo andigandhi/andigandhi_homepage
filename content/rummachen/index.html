@@ -20,12 +20,14 @@ text {
 </style>
 
 <body>
-    <h1>Der Jugge Rummach Graph</h1>
+    <a href="?clearname=YES" style="text-decoration: none; color: black; cursor: default;"><h1>Der Jugge Rummach Graph</h1></a>
     <svg width="960" height="600"></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </body>
 
 <script>
+
+var clearNam = (findGetParameter("clearname") == "YES")
 
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
@@ -34,7 +36,7 @@ var svg = d3.select("svg"),
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("link", d3.forceLink().distance(50).id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -68,6 +70,7 @@ d3.json("menschen.json", function(error, graph) {
   
   var lables = node.append("text")
       .text(function(d) {
+        if (clearNam) return d.name;
         return d.id;
       })
       .attr('x', 8)
@@ -112,6 +115,19 @@ function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
+}
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
 }
 
 </script>
