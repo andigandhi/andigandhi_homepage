@@ -13,7 +13,7 @@
 }
 
 text {
-  font-family: sans-serif;
+  font-family: serif;
   font-size: 15px;
 }
 
@@ -36,7 +36,7 @@ var svg = d3.select("svg"),
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(50).id(function(d) { return d.id; }))
+    .force("link", d3.forceLink().distance(75).id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -57,7 +57,7 @@ d3.json("menschen.json", function(error, graph) {
     .enter().append("g")
 
   var circles = node.append("circle")
-    .attr("r", 7)
+    .attr("r", 10)
     .attr("fill", function(d) { return color(d.group); });
 
   // Create a drag handler and append it to the node object instead
@@ -73,8 +73,8 @@ d3.json("menschen.json", function(error, graph) {
         if (clearNam) return d.name;
         return d.id;
       })
-      .attr('x', 8)
-      .attr('y', 0);
+      .attr('x', 14)
+      .attr('y', 5);
 
   node.append("title")
       .text(function(d) { return d.id; });

@@ -16,8 +16,8 @@
       {"name": "Pauli", "id": "14", "group": 2},
       {"name": "Tami", "id": "15", "group": 2},
       {"name": "Luca", "id": "16", "group": 2},
-      {"name": "Steffi P", "id": "17", "group": 2}
-
+      {"name": "Steffi P", "id": "17", "group": 2},
+      {"name": "Lu", "id": "18", "group": 1}
     ],
     "links": [
       {"source": "01", "target": "02", "value": 1},
@@ -28,15 +28,13 @@
       {"source": "14", "target": "02", "value": 1},
       {"source": "04", "target": "14", "value": 1},
       {"source": "10", "target": "11", "value": 1},
-      {"source": "01", "target": "02", "value": 1},
-      {"source": "01", "target": "02", "value": 1},
       {"source": "14", "target": "17", "value": 1},
       {"source": "03", "target": "13", "value": 1},
       {"source": "03", "target": "04", "value": 1},
       {"source": "10", "target": "16", "value": 1},
-      {"source": "01", "target": "02", "value": 1},
-      {"source": "01", "target": "02", "value": 1}
-      
+      {"source": "10", "target": "18", "value": 1},
+      {"source": "11", "target": "18", "value": 1},
+      {"source": "01", "target": "14", "value": 1}
 
 
     ]
