@@ -1,11 +1,43 @@
 {
     "nodes": [
-      {"id": "001", "group": 1},
-      {"id": "002", "group": 1},
-      {"id": "003", "group": 1},
-      {"id": "004", "group": 1}
+      {"id": "01", "group": 2},
+      {"id": "02", "group": 1},
+      {"id": "03", "group": 2},
+      {"id": "04", "group": 2},
+      {"id": "05", "group": 2},
+      {"id": "06", "group": 2},
+      {"id": "07", "group": 1},
+      {"id": "08", "group": 2},
+      {"id": "09", "group": 2},
+      {"id": "10", "group": 1},
+      {"id": "11", "group": 1},
+      {"id": "12", "group": 1},
+      {"id": "13", "group": 2},
+      {"id": "14", "group": 2},
+      {"id": "15", "group": 2},
+      {"id": "16", "group": 2},
+      {"id": "17", "group": 2}
+
     ],
     "links": [
-      {"source": "001", "target": "002", "value": 1}
+      {"source": "01", "target": "02", "value": 1},
+      {"source": "01", "target": "17", "value": 1},
+      {"source": "10", "target": "02", "value": 1},
+      {"source": "11", "target": "02", "value": 1},
+      {"source": "12", "target": "02", "value": 1},
+      {"source": "14", "target": "02", "value": 1},
+      {"source": "04", "target": "14", "value": 1},
+      {"source": "10", "target": "11", "value": 1},
+      {"source": "01", "target": "02", "value": 1},
+      {"source": "01", "target": "02", "value": 1},
+      {"source": "14", "target": "17", "value": 1},
+      {"source": "03", "target": "13", "value": 1},
+      {"source": "03", "target": "04", "value": 1},
+      {"source": "10", "target": "16", "value": 1},
+      {"source": "01", "target": "02", "value": 1},
+      {"source": "01", "target": "02", "value": 1}
+      
+
+
     ]
   }
