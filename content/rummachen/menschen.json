@@ -3,7 +3,7 @@
       {"name": "Melli", "id": "01", "group": 2},
       {"name": "Vinzi", "id": "02", "group": 1},
       {"name": "Iris", "id": "03", "group": 2},
-      {"name": "Annika", "id": "04", "group": 2},
+      {"name": "Anika", "id": "04", "group": 2},
       {"name": "Hannah", "id": "05", "group": 2},
       {"name": "Laura", "id": "06", "group": 2},
       {"name": "Boohb", "id": "07", "group": 1},
@@ -17,25 +17,29 @@
       {"name": "Tami", "id": "15", "group": 2},
       {"name": "Luca", "id": "16", "group": 2},
       {"name": "Steffi P", "id": "17", "group": 2},
-      {"name": "Lu", "id": "18", "group": 1}
+      {"name": "Lu", "id": "18", "group": 1},
+      {"name": "Chrissi", "id": "19", "group": 1},
+
+      {"name": "Alfred", "id": "00", "group": 1}
     ],
     "links": [
       {"source": "01", "target": "02", "value": 1},
+      {"source": "01", "target": "14", "value": 1},
       {"source": "01", "target": "17", "value": 1},
-      {"source": "10", "target": "02", "value": 1},
-      {"source": "11", "target": "02", "value": 1},
-      {"source": "12", "target": "02", "value": 1},
-      {"source": "14", "target": "02", "value": 1},
-      {"source": "04", "target": "14", "value": 1},
-      {"source": "10", "target": "11", "value": 1},
-      {"source": "14", "target": "17", "value": 1},
+      {"source": "02", "target": "05", "value": 1},
+      {"source": "02", "target": "10", "value": 1},
+      {"source": "02", "target": "11", "value": 1},
+      {"source": "02", "target": "12", "value": 1},
+      {"source": "02", "target": "14", "value": 1},
       {"source": "03", "target": "13", "value": 1},
-      {"source": "03", "target": "04", "value": 1},
+      {"source": "04", "target": "14", "value": 1},
+      {"source": "06", "target": "07", "value": 1},
+      {"source": "07", "target": "09", "value": 1},
+      {"source": "08", "target": "19", "value": 1},
+      {"source": "10", "target": "11", "value": 1},
       {"source": "10", "target": "16", "value": 1},
       {"source": "10", "target": "18", "value": 1},
       {"source": "11", "target": "18", "value": 1},
-      {"source": "01", "target": "14", "value": 1}
-
-
+      {"source": "14", "target": "17", "value": 1}
     ]
   }
