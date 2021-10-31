@@ -19,8 +19,8 @@
       {"name": "Steffi P", "id": "17", "group": 2},
       {"name": "Lu", "id": "18", "group": 1},
       {"name": "Chrissi", "id": "19", "group": 1},
-      {"name": "Vani", "id": "20", "group": 1},
-      {"name": "Mimi", "id": "21", "group": 1}
+      {"name": "Vani", "id": "20", "group": 2},
+      {"name": "Mimi", "id": "21", "group": 2}
     ],
     
     "links": [
@@ -44,6 +44,7 @@
       {"source": "06", "target": "21", "value": 1},
       {"source": "07", "target": "09", "value": 1},
       {"source": "08", "target": "19", "value": 1},
+      {"source": "09", "target": "19", "value": 1},
       {"source": "10", "target": "11", "value": 1},
       {"source": "10", "target": "16", "value": 1},
       {"source": "10", "target": "18", "value": 1},
