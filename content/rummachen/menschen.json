@@ -35,6 +35,7 @@
       {"source": "02", "target": "14", "value": 1},
       {"source": "03", "target": "13", "value": 1},
       {"source": "03", "target": "06", "value": 1},
+      {"source": "04", "target": "10", "value": 1},
       {"source": "04", "target": "14", "value": 1},
       {"source": "05", "target": "06", "value": 1},
       {"source": "06", "target": "07", "value": 1},
