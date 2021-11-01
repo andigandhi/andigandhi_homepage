@@ -3,13 +3,15 @@
 include('telegramVar.php');
 
 $update = json_decode(file_get_contents("php://input"), TRUE);
-$data[] = $update["message"]["text"];
+$chatId = $update["message"]["chat"]["id"];
+$data = $update["message"]["text"];
+$message = explode(" ", $data)
 
-$inp = file_get_contents('debug.txt');
-$inp = $inp."\n".$data;
-file_put_contents('debug.txt', $jsonData);
-
-file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro:".$data);
+if ($message[] === "/add") {
+    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro, Verbindung zwischen ".$message[1]." und ".$message[2]." hergestellt!");
+} else if ($message[] === "/newMember") {
+    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=".$message[1]." ist jetzt in der Bubble dabei. Herzlich Willkommen!");
+}
 
 /*
 $inp = file_get_contents('menschen.json');
