@@ -10,6 +10,7 @@ $message = explode(" ", $data);
 if ($message[0] === "/add") {
     addConn($message, $chatId);
 } else if ($message[0] === "/newMember") {
+    addPerson($message, $chatId);
     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=".$message[1]." ist jetzt in der Bubble dabei. Herzlich Willkommen!");
 }
 
@@ -47,11 +48,21 @@ function getID($json, $name) {
     }
     return 0;
 }
-/*
-$inp = file_get_contents('menschen.json');
-$tempArray = json_decode($inp);
-array_push($tempArray, $data);
-$jsonData = json_encode($tempArray);
-file_put_contents('menschen.json', $jsonData);
-*/
+
+
+function addPerson($message, $chatId)
+{
+    $rawJson = file_get_contents('menschen.json');
+    $jsonData = json_decode($rawJson, true);
+
+    $newId = count($jsonData["nodes"]) + 1;
+
+    if ($message[2] === "m") $group = 1;
+    else $group = 2;
+
+    $jsonData["nodes"][] = ['name' => $message[1], 'id' => (string)$newId, 'group' => $group];
+
+    file_put_contents('menschen.json', json_encode($jsonData));
+}
+
 ?>
