@@ -44,7 +44,7 @@ function remConn($message, $chatId)
         if ( ($jsonData["links"][$i]["source"] === $id1 and $jsonData["links"][$i]["target"] === $id2) or 
              ($jsonData["links"][$i]["source"] === $id2 and $jsonData["links"][$i]["target"] === $id1)) {
             unset($jsonData["links"][$i]);
-            file_put_contents('menschen.json', json_encode($jsonData));
+            file_put_contents('menschen.json', json_encode(array_values($jsonData)));
             file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro, Verbindung zwischen ".$message[1]." (ID:".$id1.") und ".$message[2]." (ID:".$id2.") entfernt!");        
             return;
         }
