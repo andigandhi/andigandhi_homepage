@@ -20,7 +20,7 @@ if ($message[0] === "/add") {
 }
 
 
-function addConn($message, $chatId)
+function remConn($message, $chatId)
 {
     include('telegramVar.php');
 
@@ -41,7 +41,7 @@ function addConn($message, $chatId)
     }
 
     for($i = 0; $i < count($jsonData["links"]); ++$i) {
-        if ($jsonData["links"][$i] == ['source' => $id1, 'target' => $id2]) {
+        if ($jsonData["links"][$i] === ['source' => $id1, 'target' => $id2]) {
             unset($jsonData["links"][$i]);
             file_put_contents('menschen.json', json_encode($jsonData));
             file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro, Verbindung zwischen ".$message[1]." (ID:".$id1.") und ".$message[2]." (ID:".$id2.") entfernt!");        
@@ -52,7 +52,7 @@ function addConn($message, $chatId)
 
 }
 
-function remConn($message, $chatId)
+function addConn($message, $chatId)
 {
     include('telegramVar.php');
 
@@ -76,7 +76,7 @@ function remConn($message, $chatId)
 
     file_put_contents('menschen.json', json_encode($jsonData));
 
-    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro, Verbindung zwischen ".$message[1]." (ID:".$id1.") und ".$message[2]." (ID:".$id2.") entfernt!");
+    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Alles klaro, Verbindung zwischen ".$message[1]." (ID:".$id1.") und ".$message[2]." (ID:".$id2.") hinzugefügt!");
 }
 
 function getID($json, $name) {
