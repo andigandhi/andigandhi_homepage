@@ -11,7 +11,7 @@
 <?php
 $radios = array(
     "https://radio80k.out.airtime.pro/radio80k_a",
-    "https://br-br1-obb.cast.addradio.de/br/br1/obb/mp3/mid?ar-distributor=ffa0",
+    "https://dispatcher.rndfnk.com/br/br1/obb/mp3/mid",
     "https://edge.mixlr.com/channel/zwtuo",
     "https://orf-live.ors-shoutcast.at/fm4-q2a",
     "http://andigandhi.ddns.net:8000/mpd.mp3");
