@@ -9,9 +9,7 @@ function telegram($msg) {
     return $result;
 }
 
-$telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
-$telegramchatid = -1001358400628;
-//$telegramchatid = 698532846;
+include('telegramVar.php');
 
 if ( (time() - strtotime(file_get_contents("lastVisit.txt"))) > 300 ) {
     file_put_contents("lastVisit.txt", date("Y-m-d h:i:sa"));
