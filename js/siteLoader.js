@@ -11,10 +11,10 @@ var siteLinks = [
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['DJ Gion Porno', 'content/gigs.html'],
 	['Creepy Stuff', 'content/image.html'],
-	['Sonstiges', ''],
+	//['Sonstiges', ''],
 	//['Lebenslauf', 'content/business/lebenslauf.html'],
-	['Impressum', 'content/impressum.html'],
-	['Datenschutz', 'content/datenschutz.html'],
+	//['Impressum', 'content/impressum.html'],
+	//['Datenschutz', 'content/datenschutz.html'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
