@@ -30,7 +30,7 @@
 			
 			delete_first_line("chat.txt");
 
-			telegram($_SERVER['REMOTE_ADDR']." ".$username.": ".$msg);
+			telegram($username.": ".$msg);
 		}
 	}
 
