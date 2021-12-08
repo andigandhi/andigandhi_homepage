@@ -10,11 +10,9 @@
 		$msg = filter_var(substr($_GET["msg"],0,60), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		if ($username != "" and $msg != "") {
 			$fp = fopen('chat.txt', 'a');
-			fwrite($fp, '<li><strong style="color: #'.abs(crc32($_SERVER['REMOTE_ADDR']) % 1000).'">'.$username.': </strong>'.$msg.'</li>');  
+			fwrite($fp, '<li><strong style="color: #'.abs(crc32($_SERVER['REMOTE_ADDR']) % 1000).'">'.$username.': </strong>'.$msg.' <small>'.date("d.m. H:i").'</small></li>');  
 			fwrite($fp, "\r\n");  
 			fclose($fp);
-			
-			$fp = fopen('../../../andigandhi_files/chatlog.txt', 'a');
 			fwrite($fp, date("Y-m-d H:i").' '.$_SERVER['REMOTE_ADDR'].', '.$username.','.$msg);  
 			fwrite($fp, "\r\n");  
 			fclose($fp);
