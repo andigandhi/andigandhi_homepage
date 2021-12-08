@@ -35,7 +35,7 @@
 			
 			msgBox.value = "";
 
-			refreshCountdown = 2;
+			refreshCountdown = 3;
 		}
 		
 		function serverRequest(usr, msg, totalRefresh) {
@@ -48,8 +48,9 @@
 						if (refreshCountdown == 0) {
 							var audio = new Audio('ding.mp3');
 							audio.play();
+							refreshCountdown = 1;
 						} else {
-							refreshCountdown-=1;
+							refreshCountdown -= 1;
 						}
 					}
 				}
