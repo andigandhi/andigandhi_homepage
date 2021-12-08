@@ -13,6 +13,9 @@
 </body>
 	
 	<script>
+		// Var to not play the sound for the first refresh of the chat
+		var first_refresh = true;
+
 		function sendMsg() {
 			let name = document.getElementById("textName").value;
 			let msgBox = document.getElementById("textMsg");
@@ -40,8 +43,12 @@
 				if (this.readyState == 4 && this.status == 200) {
 					if (this.responseText !== 'no_msg') {
 						document.getElementById("msgTree").innerHTML = this.responseText;
-						var audio = new Audio('ding.mp3');
-						audio.play();
+						if (!first_refresh) {
+							var audio = new Audio('ding.mp3');
+							audio.play();
+						} else {
+							first_refresh = false;
+						}
 					}
 				}
 			};
