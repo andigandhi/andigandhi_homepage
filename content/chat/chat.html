@@ -13,8 +13,8 @@
 </body>
 	
 	<script>
-		// Var to not play the sound for the first refresh of the chat
-		var first_refresh = true;
+		// Dont play any sound on load and after sending messages
+		var refreshCountdown = 1;
 
 		function sendMsg() {
 			let name = document.getElementById("textName").value;
@@ -34,6 +34,8 @@
 			serverRequest(name, msg, "t");
 			
 			msgBox.value = "";
+
+			refreshCountdown = 2;
 		}
 		
 		function serverRequest(usr, msg, totalRefresh) {
@@ -43,11 +45,11 @@
 				if (this.readyState == 4 && this.status == 200) {
 					if (this.responseText !== 'no_msg') {
 						document.getElementById("msgTree").innerHTML = this.responseText;
-						if (!first_refresh) {
+						if (refreshCountdown == 0) {
 							var audio = new Audio('ding.mp3');
 							audio.play();
 						} else {
-							first_refresh = false;
+							refreshCountdown-=1;
 						}
 					}
 				}
