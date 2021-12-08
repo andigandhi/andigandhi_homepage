@@ -22,7 +22,7 @@
 	}
 
 	if ($_GET["refresh"] != "t") {
-		if ((time() - filemtime('chat.txt')) > 10) {
+		if ((time() - filemtime('chat.txt')) > 8) {
 			echo("no_msg");
 			return;
 		}
