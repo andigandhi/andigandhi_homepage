@@ -13,11 +13,11 @@
 
 <script>
     var imgElem = document.getElementById("randomAutoPic");
+    var no = Math.floor((Math.random()*122));
 
     function loadRandomPic() {
-        var no = Math.floor((Math.random()*122))+1;
+        no = (no+1)%122;
         imgElem.src = "web/"+no+".jpg"
-        console.log(imgElem.src);
     }
 
     loadRandomPic();
