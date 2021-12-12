@@ -4,11 +4,22 @@
 	<meta charset="utf-8">
 	<title>Richtgeschwindigkeit 130</title>
 	<style>
+		@font-face {
+			font-family: mittelschrift;
+			src: url(mittelschrift.ttf);
+		}
+
 		body {
+			color: #FFFFFF;
+			background: #005b8c;
 			text-align: center;
+			font-family: mittelschrift,  Helvetica, serif;
 		}
 		th {
 			vertical-align: middle;
+		}
+		hr {
+			color: #FFF;
 		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -78,7 +89,7 @@
 		<form action="" method="get">
 			<input type="text" id="tokenTxt" class="form-control" name="token" placeholder="Token" required="required">
 			<br><br><br>
-			<input type="submit" value="Token eingeben" name="submitBtn" id="idSubmit">
+			<input type="submit" value="Token eingeben" id="idSubmit">
 		</form>
 		');	
 	} elseif (!testToken($token)) echo (
@@ -88,25 +99,28 @@
 	);
 	elseif ($name == "") echo (
 		'<h2>Glückwunsch! Du hast eine persönliche Einladung zum 5. Autobahnrave erhalten.</h2>
+		<br><hr><br><br>
 		<b>Wie funktioniert die Anmeldung dieses Jahr?</b><br>
 		Du gibst deinen Namen und deine Handynummer ein, damit kommst du in die Whatsapp-Gruppe.<br>
-		Im Anschluss bekommst du zwischen 0 und 3 Einladungslinks, welche du weitergeben kannst.<br>
+		Im Anschluss bekommst du zwischen 0 und 3 Einladungslinks, welche du weitergeben kannst.<br><br><br><hr><br>
 		<div id="form" class="formDiv">
 		<form action="" method="post">
+			Name<br>
 			<input type="text" id="nameTxt" class="form-control" name="name" placeholder="Name" required="required">
-			<br>
+			<br><br>
+			Telefonnummer<br>
 			<input type="text" id="fonTxt" class="form-control" name="tel" placeholder="Handynummer" required="required">
-			<br><br><br>
+			<br><br><br><br>
 			<input type="submit" value="Absenden" name="submitBtn" id="idSubmit">
 		</form>
-		</div>'
+		</div><hr>'
 	);
 	else {
 		useToken($token);
 
 		echo(
 			'<hr>
-			<table style="margin-left:auto;margin-right:auto;">
+			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 					<th style="text-align: right;">
 						Datum: xx.xx.2022<br>
@@ -114,10 +128,11 @@
 						Ticket nicht übertragbar.
 					</th>
 					<th>
-						<img src="https://api.qrserver.com/v1/create-qr-code/?data='.$name.'  '.$tel.'  '.$token.'&amp;size=100x100&amp;color=0000ff&amp;bgcolor=ffffff" alt="" title="" />
+						<img src="https://api.qrserver.com/v1/create-qr-code/?data='.$name.'  '.$tel.'  '.$token.'&amp;size=100x100&amp;color=005b8c&amp;bgcolor=ffffff" alt="" title="" />
 					</th>
 				</tr>
 			  </table> 
+			  Du solltest bald zur Whats-App-Gruppe hinzugefügt werden.
 			<hr>'
 		);
 
@@ -135,7 +150,7 @@
 			echo('
 			<h2>Gratulation</h2>
 			Du hast einen weiteren Einladungslink für eine*n Freund*in gewonnen! Schicke einfach folgenden Link oder QR-Code.<br><br><br>
-			<table style="margin-left:auto;margin-right:auto;">
+			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 				<th style="text-align: right;">
 					<h1>'.$token1.'</h1>
@@ -154,7 +169,7 @@
 			echo('
 			<h2>Gratulation!</h2>
 			Du hast sogar zwei weitere Einladungslinks für deine Freund*innen gewonnen! Schicke ihnen einfach folgende Links oder QR-Codes.<br><br><br>
-			<table style="margin-left:auto;margin-right:auto;">
+			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 				<th style="text-align: right;">
 					<h1>'.$token1.'</h1>
@@ -166,7 +181,7 @@
 				</tr>
 			</table> 
 			<br><hr><br>
-			<table style="margin-left:auto;margin-right:auto;">
+			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 				<th style="text-align: right;">
 					<h1>'.$token2.'</h1>
