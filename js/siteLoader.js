@@ -29,6 +29,7 @@ var icons = [
 	['', ''],
 	['Livestream', 'content/stream.html'],
 	['Wetter', 'https://wttr.in/', 1000, 700],
+	['Twitter', 'content/twitter.html'],
 	//['Coole Websites', 'content/links.html'],
 	['', ''],
 	['WLAN-Router', 'content/wlan.html'],
