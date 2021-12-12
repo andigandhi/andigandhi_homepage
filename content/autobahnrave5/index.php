@@ -27,7 +27,7 @@
 
 	function generateToken() {
 		global $tokenFile;
-		$newToken = random_int(100000,999999);
+		$newToken = strtoupper( dechex( random_int(65536,1048575) ) );
 
 		$fp = fopen($tokenFile, 'a');
 		fwrite($fp, $newToken."\n");  
