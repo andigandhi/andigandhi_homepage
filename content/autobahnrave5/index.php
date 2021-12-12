@@ -40,7 +40,7 @@
 		global $tokenFile;
 		$contents = file_get_contents($tokenFile);
 
-		return str_contains($contents, $token."\n");
+		return (strpos($contents, $token."\n") != false);
 	}
 
 	function useToken($token) {
