@@ -18,7 +18,7 @@
 
 	$username = filter_var(substr($_GET["usr"],0,15), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	if ($username != 'undefined') {
-		$msg = filter_var(substr($_GET["msg"],0,80), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+		$msg = filter_var(substr($_GET["msg"],0,65), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		if ($username != "" and $msg != "") {
 			$fp = fopen('chat.txt', 'a');
 			fwrite($fp, '<li><strong style="color: #'.abs(crc32($_SERVER['REMOTE_ADDR']) % 1000).'">'.$username.': </strong>'.$msg.' <small>'.date("d.m. H:i").'</small></li>');  
