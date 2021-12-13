@@ -272,7 +272,10 @@ function addAesthetics() {
 // Ermöglicht Links zu Unterseiten
 function openLinkedWindow() {
 	let no = window.location.search.substr(1);
-	if (no === "") {return;}
+	if (no === "") {
+		fillWindow(icons[1])
+		return;
+	}
 	no = parseInt(no);
 	if (no>=siteLinks.length) {
 		fillWindow(icons[no-siteLinks.length])
