@@ -120,6 +120,9 @@
 
 		echo(
 			'<br><br><br>
+			<h1>Dein Ticket</h1>
+			Mach am besten gleich einen Screenshot von dieser Seite :)
+			<br><br>
 			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 					<th style="text-align: right;">
@@ -145,7 +148,7 @@
 		
 			<hr>
 		');
-		elseif (rand(0,100) < 0){
+		elseif (rand(0,100) < 70){
 			$token1 = generateToken();
 			echo('
 			<h2>Gratulation</h2>
