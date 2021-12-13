@@ -17,10 +17,7 @@
 		return $result;
 	}
 
-
-	$username = filter_var(substr($_GET["usr"],0,15), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-	if ($username != 'undefined') {
-		$msg = filter_var(substr($_GET["msg"],0,65), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	function sendMessage($username, $msg) {
 		if ($username != "" and $msg != "") {
 			// Send the message to the chat.txt file
 			$fp = fopen('chat.txt', 'a');
@@ -38,6 +35,16 @@
 			// Send the message via telegram
 			telegram($username.": ".$msg);
 		}
+	}
+
+
+	$username = filter_var(substr($_GET["usr"],0,15), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	if ($username != 'undefined') {
+		$msg = filter_var(substr($_GET["msg"],0,65), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+		sendMessage($username, $msg);
+		// If the message is to long, split it
+		$msg = filter_var(substr($_GET["msg"],65,65), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+		if ($msg != "") sendMessage($username, $msg);
 	}
 
 	// if file wasn't manipulated the last 8s the send no update
