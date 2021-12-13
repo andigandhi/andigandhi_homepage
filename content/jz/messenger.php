@@ -4,24 +4,25 @@
 </head>
 <body>
 <h1>Dein Musikwunsch beim DJ</h1>
-
+<br><br><br>
 <form action="messenger.php" method="post">
     <div class="form-group">
-        <label>Dein Name</label> <input type="text" class="form-control" name="name" placeholder="Dein Name (optional, aber bei Heiratsanträgen erwünscht)">
+        <label>Dein Name</label> <input type="text" class="form-control" name="name" placeholder="Dein Name (optional)">
     </div>
-
+    <br><br>
     <div class="form-group">
         <label>Nachricht *</label> 
         <textarea class="form-control" name="message" placeholder="Musikwunsch oder was sonst auf dem Herzen liegt" required="required">
         </textarea>
     </div>
+    <br><br>
     <input type="submit" class="btn btn-primary" name="button_name" value="Senden">
 </form>
 
 <?php
 
 function telegram($msg) {
-    $telegrambot = "1560022093:AAHL-JGfo_IXP-_-9e2Ym-CPJUIp4Y8IhOQ";
+    include('telegramVar.php');
     $telegramchatid = 698532846;
 
     $url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
