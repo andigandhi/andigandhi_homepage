@@ -98,11 +98,11 @@
 		Sollte nichts von beidem zutreffen dann kannst du mich gerne anschreiben!'
 	);
 	elseif ($name == "") echo (
-		'<h2>Glückwunsch! Du hast eine persönliche Einladung zum 5. Autobahnrave erhalten.</h2>
-		<br><hr><br><br>
+		'<br><br><br><h2>Glückwunsch! Du hast eine persönliche Einladung zum 5. Autobahnrave erhalten.</h2>
+		<br><br><br>
 		<b>Wie funktioniert die Anmeldung dieses Jahr?</b><br>
 		Du gibst deinen Namen und deine Handynummer ein, damit kommst du in die Whatsapp-Gruppe.<br>
-		Im Anschluss bekommst du zwischen 0 und 3 Einladungslinks, welche du weitergeben kannst.<br><br><br><hr><br>
+		Im Anschluss bekommst du zwischen 0 und 3 Einladungslinks, welche du weitergeben kannst.<br><br><br><br>
 		<div id="form" class="formDiv">
 		<form action="" method="post">
 			Name<br>
@@ -113,13 +113,13 @@
 			<br><br><br><br>
 			<input type="submit" value="Absenden" name="submitBtn" id="idSubmit">
 		</form>
-		</div><hr>'
+		</div>'
 	);
 	else {
 		useToken($token);
 
 		echo(
-			'<hr>
+			'<br><br><br>
 			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 					<th style="text-align: right;">
@@ -133,7 +133,7 @@
 				</tr>
 			  </table> 
 			  Du solltest bald zur Whats-App-Gruppe hinzugefügt werden.
-			<hr>'
+			<br><br><br>'
 		);
 
 		$token1 = "";
@@ -161,7 +161,7 @@
 				</th>
 				</tr>
 			</table> 
-			<hr>
+			<br><br><br>
 			');
 		} else {
 			$token1 = generateToken();
@@ -180,7 +180,7 @@
 				</th>
 				</tr>
 			</table> 
-			<br><hr><br>
+			<br><br><br>
 			<table style="margin-left:auto;margin-right:auto;background: #FFF; color: #005b8c">
 				<tr>
 				<th style="text-align: right;">
@@ -192,7 +192,7 @@
 				</th>
 				</tr>
 			</table> 
-			<hr>
+			<br><br><br>
 			');
 		}
 
