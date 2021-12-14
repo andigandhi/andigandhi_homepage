@@ -3,7 +3,7 @@
 
 function logMail($target_dir, $target_file) {
     $fp = fopen($target_dir . 'log.txt', 'a');
-    fwrite($fp, $_SERVER['REMOTE_ADDR'].', '.$_POST["email"].'; '.$target_file-"; ".$_POST["msg"]);  
+    fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$_POST["email"].'; '.$target_file."; ".$_POST["msg"]);  
     fwrite($fp, "\r\n");  
     fclose($fp);
 }
@@ -12,12 +12,6 @@ $target_dir = "uploads/";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
 $target_file = $target_dir . md5($_POST["email"]) . "." . $imageFileType;
-
-//Check for valid mail
-if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) {
-    echo "Das scheint keine richtige E-Mail Adresse zu sein.<br>";
-    $uploadOk = 0;
-}
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -30,6 +24,12 @@ if(isset($_POST["submit"])) {
         echo "File is not an image!<br>";
         $uploadOk = 0;
     }
+}
+
+//Check for valid mail
+if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) {
+    echo "Das scheint keine richtige E-Mail Adresse zu sein.<br>";
+    $uploadOk = 0;
 }
 
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
