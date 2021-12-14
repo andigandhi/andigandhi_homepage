@@ -8,16 +8,18 @@
 
 <body>
     <h1>digitales Schrottwichteln</h1>
-    <p>Jeder von uns hat hunderte Bilder auf dem Telefon die</p>
-    <p><b>Wie funktioniert der Scheiss?</b> Im Formular unten kannst du </p>
-    <p>Deine E-Mail-Adresse wird selbstverständlich nach dem Wichteln gelöscht.</p>
+    <p>Jeder von uns hat hunderte random Bilder auf dem Telefon. Hier ist die Gelegenheit diese mit einer zufälligen Person zu teilen. Dafür bekommst du an Heiligabend ein anderes Bild von einer zufälligen Person.</p>
+    <p><b>Wie funktioniert der Scheiss?</b> Im Formular unten musst du deine E-Mail Adresse eingeben und irgendein Bild hochladen. Zudem kannst du auch noch eine kleine Nachricht hinterlassen. Am 24.12. werden die Bilder an zufällige E-Mail Adressen versendet.</p>
+    <p>Deine E-Mail-Adresse wird selbstverständlich vertraulich behandelt und nach dem Wichteln gelöscht.</p>
 
 	<form action="sent.php" method="post" enctype="multipart/form-data">
         <input type="text" id="emailTxt" class="form-control" name="email" placeholder="name@email.de" required="required">
         <br><br>
         <label>Bilddatei auswählen: 
             <input name="fileToUpload" type="file" size="50" accept="image/*"> 
-        </label> 
+        </label>
+        <br><br>
+        <input type="text" id="msgTxt" class="form-control" name="msg" placeholder="Optional: Nachricht">
         <br><br>
         <input type="submit" value="Wichtelgeschenk absenden" name="submit" id="idSubmit">
     </form>
