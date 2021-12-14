@@ -3,7 +3,7 @@
 $target_dir = "uploads/";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
-$target_file = $target_dir . $_POST["email"] . $imageFileType;
+$target_file = $target_dir . $_POST["email"] . "." . $imageFileType;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
