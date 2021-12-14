@@ -27,7 +27,7 @@ if(isset($_POST["submit"])) {
 }
 
 //Check for valid mail
-if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) {
+if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $_POST["email"])) {
     echo "Das scheint keine richtige E-Mail Adresse zu sein.<br>";
     $uploadOk = 0;
 }
