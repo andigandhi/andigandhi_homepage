@@ -10,8 +10,9 @@ function sendMail($empfaenger, $link, $msg) {
     mail($empfaenger, $betreff, $text, $from);
 }
 
+$filename = "uploads/log.txt";
 // Open the file
-$fp = @fopen("uploads/log.txt", 'r'); 
+$fp = @fopen($filename, 'r'); 
 
 // Add each line to an array
 if ($fp) {
@@ -21,6 +22,7 @@ if ($fp) {
 for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
     sendMail($curr[1], $curr[2], $curr[3]);
+	echo "Mail an " . $curr[1] . " gesendet!";
 }
 
 ?>
