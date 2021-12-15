@@ -20,14 +20,12 @@
     else {
         $fp = @fopen('../../../andigandhi_files/wichtelConnections.txt', 'r');
         if ($fp) {
-            $array = explode("\n", fread($fp, filesize($filename)));
+            $array = explode("\r", fread($fp, filesize('../../../andigandhi_files/wichtelConnections.txt')));
         }
-
         $searchMd5 = md5($_POST["email"]);
         
         for ($i = 0; $i < count($array); $i++) {
             $curr = explode("; ", $array[$i]);
-            echo $curr[0]."- -".$searchMd5;
             if ($curr[0] == $searchMd5) break;
         }
 

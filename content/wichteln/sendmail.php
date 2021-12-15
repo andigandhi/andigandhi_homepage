@@ -58,8 +58,7 @@ for ($i = 0; $i < count($array); $i++) {
     }
 
     // Log connections for later
-    fwrite($fp, md5($curr[1]).'; '.$from[2].'; '.$from[3]);  
-    fwrite($fp, "\r\n");  
+    fwrite($fp, md5($curr[1]).'; '.$from[2].'; '.$from[3]);
 }
 fclose($fp);
 
