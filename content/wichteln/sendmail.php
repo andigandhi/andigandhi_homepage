@@ -7,7 +7,7 @@ function sendMail($empfaenger, $link, $msg) {
     $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\"><br><br>";
     $text .= "Zusätzliche Nachricht vom Wichtel: ".$msg."<br><br>";
     
-    echo $text."<br><br><br><br><br>";
+    echo $text."<br><br>";
     //mail($empfaenger, $betreff, $text, $from);
 }
 
@@ -40,7 +40,7 @@ for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
     $from = explode("; ", $array[$mixer[$i]]);
     sendMail($curr[1], $from[2], $from[3]);
-    echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br>";
+    echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br><br><hr><br><br>";
 }
 
 ?>
