@@ -12,7 +12,7 @@ function logMail() {
 
     //small log
     $fp = fopen($target_dir . 'log.txt', 'a');
-    fwrite($fp, '*****' . substr($emailAddr, 5);.'; '.$target_file);  
+    fwrite($fp, '*****' . substr($emailAddr, 5).'; '.$target_file);  
     fwrite($fp, "\r\n");  
     fclose($fp);
 }
