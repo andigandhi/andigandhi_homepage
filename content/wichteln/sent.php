@@ -19,6 +19,8 @@ function logMail() {
 
 $emailAddr = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $message = filter_var(substr($_POST["msg"],0,500), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+//Remove new lines
+$message = trim(preg_replace('/\s+/', ' ', $message));
 
 $target_dir = "uploads/";
 $uploadOk = 1;
