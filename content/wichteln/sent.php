@@ -18,7 +18,7 @@ function logMail() {
 }
 
 $emailAddr = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$message = filter_var($_POST["msg"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$message = filter_var(substr($_POST["msg"],0,500), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $target_dir = "uploads/";
 $uploadOk = 1;
@@ -65,6 +65,21 @@ if ($uploadOk == 0) {
         echo "The file has been uploaded.<br>";
 
         echo "<b>Du bekommst dein digitales Schrottwichtel Geschenk am 24. Dezember!</b>";
+
+        echo "<pre>
+            .
+        __/ \__
+        \     /
+        /.'o'.\
+         .o.'.
+        .'.'o'.
+       o'.o.'.o.
+      .'.o.'.'.o.
+     .o.'.o.'.o.'.
+        [_____]
+         \___/
+         </pre>";
+
     } else {
         echo "Es gab irgendeinen serverseitigen Fehler beim Hochladen :(<br>".htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
     }
