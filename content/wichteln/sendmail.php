@@ -19,12 +19,18 @@ if ($fp) {
    $array = explode("\n", fread($fp, filesize($filename)));
 }
 
+$numbers = range(0, count($array));
+echo count($array);
+shuffle($numbers);
+foreach ($numbers as $number) {
+    echo "$number ";
+}
+
 for ($i = 0; $i < count($array)-1; $i++) {
     $curr = explode("; ", $array[$i]);
-    if($curr != "") {
-        sendMail($curr[1], $curr[2], $curr[3]);
-        echo $i.": Mail an <b>" . $curr[1] . "</b> gesendet!<br>";
-    }
+    $from = explode("; ", $array[$numbers[$i]]);
+    //sendMail($curr[1], $from[2], $from[3]);
+    echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br>";
 }
 
 ?>
