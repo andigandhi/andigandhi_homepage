@@ -19,11 +19,11 @@ if ($fp) {
    $array = explode("\n", fread($fp, filesize($filename)));
 }
 
-for ($i = 0; $i < count($array); $i++) {
+for ($i = 0; $i < count($array)-1; $i++) {
     $curr = explode("; ", $array[$i]);
     if($curr != "") {
         sendMail($curr[1], $curr[2], $curr[3]);
-        echo $i.": Mail an " . $curr[1] . " gesendet!<br>";
+        echo $i.": Mail an <b>" . $curr[1] . "</b> gesendet!<br>";
     }
 }
 

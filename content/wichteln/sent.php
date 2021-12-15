@@ -1,7 +1,8 @@
 
 <?php
 
-function logMail($target_dir, $target_file) {
+function logMail() {
+    global $emailAddr, $message, $target_dir, $target_file;
     $fp = fopen($target_dir . 'log.txt', 'a');
     fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$emailAddr.'; '.$target_file."; ".$message);  
     fwrite($fp, "\r\n");  
@@ -52,7 +53,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        logMail($target_dir, $target_file);
+        logMail();
         echo "The file has been uploaded.<br>";
 
         echo "<b>Du bekommst dein digitales Schrottwichtel Geschenk am 24. Dezember!</b>";
