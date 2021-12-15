@@ -10,7 +10,7 @@ function sendMail($empfaenger, $link, $msg) {
     mail($empfaenger, $betreff, $text, $from);
 }
 
-$filename = "uploads/log.txt";
+$filename = '../../../andigandhi_files/wichtelLog.txt';
 // Open the file
 $fp = @fopen($filename, 'r'); 
 

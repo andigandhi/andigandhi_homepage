@@ -3,8 +3,16 @@
 
 function logMail() {
     global $emailAddr, $message, $target_dir, $target_file;
+
+    // full log
+    $fp = fopen('../../../andigandhi_files/wichtelLog.txt', 'a');
+    fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$emailAddr.'; '.$target_file.'; '.$message);  
+    fwrite($fp, "\r\n");  
+    fclose($fp);
+
+    //small log
     $fp = fopen($target_dir . 'log.txt', 'a');
-    fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$emailAddr.'; '.$target_file."; ".$message);  
+    fwrite($fp, '*****' . substr($emailAddr, 5);.'; '.$target_file);  
     fwrite($fp, "\r\n");  
     fclose($fp);
 }
@@ -32,7 +40,7 @@ if(isset($_POST["submit"])) {
 
 //Check for valid mail
 if (filter_var($emailAddr, FILTER_VALIDATE_EMAIL) === false) {
-    echo $emailAddr." scheint keine richtige E-Mail Adresse zu sein.<br>";
+    echo $emailAddr . " scheint keine richtige E-Mail Adresse zu sein.<br>";
     $uploadOk = 0;
 }
 
