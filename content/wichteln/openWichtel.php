@@ -18,12 +18,25 @@
     ';
     }
     else {
-        // TODO
+        $fp = @fopen('../../../andigandhi_files/wichtelConnections.txt', 'r');
+        if ($fp) {
+            $array = explode("\n", fread($fp, filesize($filename)));
+        }
+
+        $searchMd5 = md5($_POST["email"]);
+        
+        for ($i = 0; $i < count($array); $i++) {
+            $curr = explode("; ", $array[$i]);
+            if ($curr[0] == $searchMd5) break;
+        }
+
         $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, ich bin begeistert von der Resonanz haha!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
-        $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".md5($_POST["email"]).".jpg\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
-        $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>--</p>";
+        $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$curr[1].".jpg\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
+        $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$curr[2]."</p>";
         
         echo $text."<br><br>";
+
+        fclose($fp);
     }
     ?>
 </body>

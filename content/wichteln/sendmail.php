@@ -42,6 +42,8 @@ for ($i = 0; $i < count($mixer); $i++) {
     }
 }
 
+$fp = fopen('../../../andigandhi_files/wichtelConnections.txt', 'w');
+
 for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
     $from = explode("; ", $array[$mixer[$i]]);
@@ -54,6 +56,11 @@ for ($i = 0; $i < count($array); $i++) {
         echo "<br><br>";
         echo $i.": Bild von " . $from[1] . " ist für <b>" . $curr[1] . "</b> bestimmt und kann online eingesehen werden.<br><br><hr><br><br>";
     }
+
+    // Log connections for later
+    fwrite($fp, md5($curr[1]).'; '.$from[2].'; '.$from[3]);  
+    fwrite($fp, "\r\n");  
 }
+fclose($fp);
 
 ?>
