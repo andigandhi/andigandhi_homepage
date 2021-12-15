@@ -3,9 +3,9 @@ function sendMail($empfaenger, $link, $msg) {
     $betreff = "Cyber-SchrottWichteln";
     $from  = "From: sonnenbrandi <sonnenbrandi@andigandhi.ga>\r\n";
     $from .= "Content-Type: text/html\r\n";
-    $text  = "Hey!<br>Ich bin's der sonnenbrandi! Ich wünsche Dir einen wundervollen Heiligabend!<br>Danke fürs mitmachen!<br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
-    $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\"><br><br>";
-    $text .= "Zusätzliche Nachricht vom Wichtel: ".$msg."<br><br>";
+    $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, ich bin begeistert von der Resonanz haha!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
+    $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
+    $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$msg."</p>";
     
     echo $text."<br><br>";
     //mail($empfaenger, $betreff, $text, $from);
