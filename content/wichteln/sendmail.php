@@ -10,6 +10,9 @@ function sendMail($empfaenger, $link, $msg) {
     mail($empfaenger, $betreff, $text, $from);
 }
 
+include("login.php");
+if ($_GET["pw"] != $passwd) exit;
+
 $filename = '../../../andigandhi_files/wichtelLog.txt';
 // Open the file
 $fp = @fopen($filename, 'r'); 
@@ -24,6 +27,13 @@ array_pop($array);
 $mixer = range(0, count($array)-1);
 //shuffle the array
 shuffle($mixer);
+// remove dublicates
+for ($i = 0; $i < count($mixer); $i++) {
+    if ($i == $mixer[$i]) {
+        $mixer[$i] = $mixer[($i+1)%count($mixer)];
+        $mixer[($i+1)%count($mixer)] = $i;
+    }
+}
 
 for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
