@@ -3,18 +3,18 @@
 
 function logMail($target_dir, $target_file) {
     $fp = fopen($target_dir . 'log.txt', 'a');
-    fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$emailAdrr.'; '.$target_file."; ".$message);  
+    fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$emailAddr.'; '.$target_file."; ".$message);  
     fwrite($fp, "\r\n");  
     fclose($fp);
 }
 
-$emailAdrr = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+$emailAddr = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $message = filter_var($_POST["msg"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 $target_dir = "uploads/";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
-$target_file = $target_dir . md5($emailAdrr) . "." . $imageFileType;
+$target_file = $target_dir . md5($emailAddr) . "." . $imageFileType;
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -30,8 +30,8 @@ if(isset($_POST["submit"])) {
 }
 
 //Check for valid mail
-if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-    echo "Das scheint keine richtige E-Mail Adresse zu sein.<br>";
+if (filter_var($emailAddr, FILTER_VALIDATE_EMAIL) === false) {
+    echo $emailAddr." scheint keine richtige E-Mail Adresse zu sein.<br>";
     $uploadOk = 0;
 }
 
