@@ -11,10 +11,16 @@ function sendMail($empfaenger, $link, $msg) {
     //mail($empfaenger, $betreff, $text, $from);
 }
 
+function isMailAdrr($string) {
+    if (filter_var($string, FILTER_VALIDATE_EMAIL) === false) return false;
+    return true;
+}
+
 include("login.php");
 if ($_GET["pw"] != $passwd) exit;
 
 $filename = '../../../andigandhi_files/wichtelLog.txt';
+
 // Open the file
 $fp = @fopen($filename, 'r'); 
 
@@ -39,8 +45,15 @@ for ($i = 0; $i < count($mixer); $i++) {
 for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
     $from = explode("; ", $array[$mixer[$i]]);
-    sendMail($curr[1], $from[2], $from[3]);
-    echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br><br><hr><br><br>";
+    if (isMailAdrr($curr[1])) {
+        sendMail($curr[1], $from[2], $from[3]);
+        echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br><br><hr><br><br>";
+    } else {
+        echo "<img src=\"https://andigandhi.ga/content/wichteln/".$from[2]."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
+        echo "Nachricht vom Wichtel:<br>".$from[3];
+        echo "<br><br>";
+        echo $i.": Bild von " . $from[1] . " ist für <b>" . $curr[1] . "</b> bestimmt und kann online eingesehen werden.<br><br><hr><br><br>";
+    }
 }
 
 ?>

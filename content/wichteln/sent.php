@@ -18,7 +18,9 @@ function logMail() {
 }
 
 $emailAddr = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+str_replace(";",",",$emailAddr);
 $message = filter_var(substr($_POST["msg"],0,500), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+str_replace(";",",",$message);
 //Remove new lines
 $message = trim(preg_replace('/\s+/', ' ', $message));
 
@@ -42,8 +44,7 @@ if(isset($_POST["submit"])) {
 
 //Check for valid mail
 if (filter_var($emailAddr, FILTER_VALIDATE_EMAIL) === false) {
-    echo $emailAddr . " scheint keine richtige E-Mail Adresse zu sein.<br>";
-    $uploadOk = 0;
+    echo "<b>" . $emailAddr . " scheint keine E-Mail Adresse zu sein. Mit diesem Namen hast du am 24. auf dieser Homepage Zugang zu deinem Wichtelgeschenk.</b><br>";
 }
 
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
