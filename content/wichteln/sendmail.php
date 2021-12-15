@@ -3,11 +3,12 @@ function sendMail($empfaenger, $link, $msg) {
     $betreff = "Cyber-SchrottWichteln";
     $from  = "From: sonnenbrandi <sonnenbrandi@andigandhi.ga>\r\n";
     $from .= "Content-Type: text/html\r\n";
-    $text  = "Hey!<br>Ich wünsche Dir einen wundervollen Heiligabend! Hier ist dein Schrottwichtel-Bild:<br>";
-    $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\"><br>";
-    $text .= "Zusätzliche Nachricht: ".$msg."<br><br>";
+    $text  = "Hey!<br>Ich bin's der sonnenbrandi! Ich wünsche Dir einen wundervollen Heiligabend!<br>Danke fürs mitmachen!<br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
+    $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\"><br><br>";
+    $text .= "Zusätzliche Nachricht vom Wichtel: ".$msg."<br><br>";
     
-    mail($empfaenger, $betreff, $text, $from);
+    echo $text."<br><br><br><br><br>";
+    //mail($empfaenger, $betreff, $text, $from);
 }
 
 include("login.php");
@@ -38,7 +39,7 @@ for ($i = 0; $i < count($mixer); $i++) {
 for ($i = 0; $i < count($array); $i++) {
     $curr = explode("; ", $array[$i]);
     $from = explode("; ", $array[$mixer[$i]]);
-    //sendMail($curr[1], $from[2], $from[3]);
+    sendMail($curr[1], $from[2], $from[3]);
     echo $i.": Bild von " . $from[1] . " an <b>" . $curr[1] . "</b> gesendet!<br>";
 }
 
