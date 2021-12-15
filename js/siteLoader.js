@@ -144,7 +144,8 @@ function fillWindow(no, w, h) {
 function addPopup() {
 	var left = Math.floor((Math.random() * 80) + 0);
 	var top = Math.floor((Math.random() * 20) + 0);
-	addWindow("Werbung", "<img alt='' src='img/corona-sticker-werbung.jpg' width=100% onclick='alert(\"Schreib mir einfach auf Instagram :)\")' style='cursor: pointer'>", 400, 300, left, top);
+	//addWindow("Werbung", "<img alt='' src='img/corona-sticker-werbung.jpg' width=100% onclick='alert(\"Schreib mir einfach auf Instagram :)\")' style='cursor: pointer'>", 400, 300, left, top);
+	addWindow("Juggeparty", "<img alt='' src='img/23jz-small.jpg' width=100% onclick='alert(\"Schau am 23. Dezember einfach auf jz.andigandhi.ga\")' style='cursor: pointer'>", 300, 550, left, top);
 }
 
 // Removes a window with a specific ID
@@ -295,9 +296,9 @@ fillWindow(1);
 
 openLinkedWindow();
 
-if(Math.random() > 0.7 && false) {
+if(Math.random() > 0.25) {
 	var interval = setInterval(function(){ 
-		if(Math.random() > 0.9) {
+		if(Math.random() > 0.75) {
 			addPopup();
 			clearInterval(interval);
 		}
