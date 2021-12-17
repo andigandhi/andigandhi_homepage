@@ -260,7 +260,7 @@ function randomBackgroundColor() {
 
 function addAesthetics() {
 	if (document.body.style.backgroundImage === "") {
-		document.body.style.backgroundImage = "../img/bg.jpg";
+		document.body.style.backgroundImage = "url('../img/bg.jpg')";
 		document.getElementById("aestheticBtn").innerHTML = "wieder der einfarbige Hintergrund";
 		var audio = new Audio('https://www.winhistory.de/more/winstart/mp3/win95.mp3');
 		audio.play();
