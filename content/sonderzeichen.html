@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>.</title>
+	<link rel="stylesheet" href="../css/style2.css">
+</head>
+
+<script>
+	function convText() {
+		var input = document.getElementById("inpTxt").value;
+		output = input.replace(/s/gi,"$").replace(/a/gi,"@").replace(/e/gi,"€").replace(/o/gi,"0");
+		output = output.replace(/g€/gi,"GE");
+		document.getElementById("outTxt").value = output;
+	}
+</script>
+
+<body style="overflow-y: auto; text-align: center;">
+	<img alt="" src="../img/andigandhi98.png">
+
+	<p><b>Text zu $0nd€rz€ich€n Converter</b></p>
+	<textarea id="inpTxt" class="form-control" placeholder="Hier den Text zum Umwandeln eingeben" rows="4" cols="60"></textarea><br><br>
+	<button onclick="convText();">KONVERTIEREN</button><br><br>
+	<textarea id="outTxt" class="form-control" placeholder="Ausgabetext" rows="4" cols="60"></textarea>
+</body>
+
+</html>

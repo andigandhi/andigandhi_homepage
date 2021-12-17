@@ -34,27 +34,27 @@ if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     
     if($check !== false) {
-        echo "Deine Datei ist ein Bild - " . $check["mime"] . ".<br>";
+        echo "-- Deine Datei ist ein Bild - " . $check["mime"] . ".<br>";
         $uploadOk = 1;
     } else {
-        echo "Deine Datei ist kein Bild!<br>";
+        echo "-- Deine Datei ist kein Bild!<br>";
         $uploadOk = 0;
     }
 }
 
 //Check for valid mail
 if (filter_var($emailAddr, FILTER_VALIDATE_EMAIL) === false) {
-    echo "<b>" . $emailAddr . " scheint keine E-Mail Adresse zu sein. Mit diesem Namen hast du am 24. auf dieser Homepage Zugang zu deinem Wichtelgeschenk.</b><br>";
+    echo "-- <b>" . $emailAddr . " scheint keine E-Mail Adresse zu sein. Mit diesem Namen hast du am 24. auf dieser Homepage Zugang zu deinem Wichtelgeschenk.</b><br>";
 }
 
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
-    echo "Sorry, diese Datei ist größer als 5Mb.<br>";
+    echo "-- Sorry, diese Datei ist größer als 5Mb.<br>";
     $uploadOk = 0;
 }
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-    echo "Sorry, es sind nur JPG, JPEG, PNG & GIF Dateien erlaubt.<br>";
+    echo "-- Sorry, es sind nur JPG, JPEG, PNG & GIF Dateien erlaubt.<br>";
     $uploadOk = 0;
 }
 
@@ -65,12 +65,12 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         logMail();
-        echo "The file has been uploaded.<br>";
+        echo "-- Dein Bild wurde hochgeladen!<br>";
+        echo "Danke fürs Mitmachen!<br>";
+        echo "<b>Du bekommst dein digitales Schrottwichtel Geschenk am 24. Dezember!</b><br><br>";
 
-        echo "<b>Du bekommst dein digitales Schrottwichtel Geschenk am 24. Dezember!</b>";
-
-        echo "<pre>
-            .
+        echo "<pre style=\"color: darkgreen;\">
+           .
         __/ \__
         \     /
         /.'o'.\

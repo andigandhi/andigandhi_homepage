@@ -3,6 +3,11 @@
 <head>
 	<link rel="stylesheet" href="https://unpkg.com/98.css" />
 	<meta charset="utf-8">
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 	<title>Cyber-Schrottwichteln</title>
 </head>
 
@@ -13,7 +18,7 @@
     echo '
 	<form action="" method="post" style="text-align: center;">
         <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63">
-        <input type="submit" value="Wichtelgeschenk absenden" name="submit" id="idSubmit">
+        <input type="submit" value="Wichtelbild einsehen" name="submit" id="idSubmit">
     </form>
     ';
     }
