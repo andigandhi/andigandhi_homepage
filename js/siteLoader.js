@@ -260,7 +260,7 @@ function randomBackgroundColor() {
 
 function addAesthetics() {
 	if (document.body.style.backgroundImage === "") {
-		document.body.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c21ede05-b425-49a6-a33b-0c9d9c537f40/d38z382-31ca4b64-fd08-43ea-8ca1-a6bc3491a07b.png/v1/fill/w_800,h_500,q_80,strp/windows_9x_clouds_remake_by_brianmatte_d38z382-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01MDAiLCJwYXRoIjoiXC9mXC9jMjFlZGUwNS1iNDI1LTQ5YTYtYTMzYi0wYzlkOWM1MzdmNDBcL2QzOHozODItMzFjYTRiNjQtZmQwOC00M2VhLThjYTEtYTZiYzM0OTFhMDdiLnBuZyIsIndpZHRoIjoiPD04MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.50ItsgCN-FkR17Ou3qg0C6O1aWTli7JyaacXqJTIHUk')";
+		document.body.style.backgroundImage = "../img/bg.jpg";
 		document.getElementById("aestheticBtn").innerHTML = "wieder der einfarbige Hintergrund";
 		var audio = new Audio('https://www.winhistory.de/more/winstart/mp3/win95.mp3');
 		audio.play();
@@ -293,9 +293,11 @@ createIcons();
 // Builds the menu
 build_menu();
 // Opens first Window
-fillWindow(1);
+//fillWindow(1);
 
 openLinkedWindow();
+
+addAesthetics();
 
 if(Math.random() > 0.25) {
 	var interval = setInterval(function(){ 
