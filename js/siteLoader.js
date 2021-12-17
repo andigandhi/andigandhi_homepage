@@ -297,8 +297,6 @@ build_menu();
 
 openLinkedWindow();
 
-addAesthetics();
-
 if(Math.random() > 0.25) {
 	var interval = setInterval(function(){ 
 		if(Math.random() > 0.75) {
