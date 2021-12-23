@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <h2>Cyber-Schrottwichteln</h2>
     <?php
     if ($_POST["email"] == "") {
     echo '
+    <h2>Cyber-Schrottwichteln</h2>
 	<form action="" method="post" style="text-align: center;">
         <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63">
         <input type="submit" value="Wichtelbild einsehen" name="submit" id="idSubmit">

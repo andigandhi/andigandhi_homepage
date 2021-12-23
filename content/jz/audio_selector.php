@@ -15,7 +15,7 @@ $radios = array(
     "https://edge.mixlr.com/channel/zwtuo",
     "https://orf-live.ors-shoutcast.at/fm4-q2a",
     "https://andigandhi.ga/content/jz/luther.mp3",
-    "http://andigandhi.ddns.net:8000/mpd.mp3");
+    "http://andigandhi.ddns.net:8000/jz.mp3");
 $radioNo = $_GET["no"] ?? -1;
 
 if ($radioNo >= 0) {
