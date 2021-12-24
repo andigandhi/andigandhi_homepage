@@ -9,7 +9,7 @@ function sendMail($empfaenger, $link, $msg) {
     $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$msg."</p>";
     
     echo $text."<br><br>";
-    mail($empfaenger, $betreff, $text, $from);
+    //mail($empfaenger, $betreff, $text, $from);
 }
 
 function isMailAdrr($string) {
@@ -20,6 +20,24 @@ function isMailAdrr($string) {
 include("login.php");
 if ($_GET["pw"] != $passwd) exit;
 
+$fp = @fopen('../../../andigandhi_files/wichtelConnections.txt', 'r');
+if ($fp) {
+    $array = explode("\r", fread($fp, filesize('../../../andigandhi_files/wichtelConnections.txt')));
+}
+
+for ($i = 0; $i < count($array); $i++) {
+    $curr = explode("; ", $array[$i]);
+    $text = "<img src=\"https://andigandhi.ga/content/wichteln/".$curr[1]."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
+    $text .= "<p>".$curr[2]."</p>";
+
+    echo $text."<br><br>";
+}
+
+fclose($fp);
+
+exit;
+
+/*
 $filename = '../../../andigandhi_files/wichtelLog.txt';
 
 // Open the file
@@ -62,5 +80,5 @@ for ($i = 0; $i < count($array); $i++) {
     fwrite($fp, md5($curr[1]).'; '.$from[2].'; '.$from[3]);
 }
 fclose($fp);
-
+*/
 ?>
