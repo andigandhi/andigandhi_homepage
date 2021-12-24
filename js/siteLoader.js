@@ -26,7 +26,7 @@ var icons = [
 	['Juggeparty', 'content/jz/jzParty.php'],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html'],
-	['Wichteln', 'content/wichteln/'],
+	['Wichteln', 'content/wichteln/openWichtel.php'],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],

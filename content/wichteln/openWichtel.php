@@ -34,7 +34,7 @@
             if ($curr[0] == $searchMd5) break;
         }
 
-        $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, ich bin begeistert von der Resonanz haha!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
+        $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
         $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$curr[1]."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
         $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$curr[2]."</p>";
         

@@ -4,12 +4,12 @@ function sendMail($empfaenger, $link, $msg) {
     $from  = "From: sonnenbrandi <sonnenbrandi@andigandhi.ga>\r\n";
     $from .= "Content-Type: text/html\r\n";
     $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend und schöne Feiertage!</p><p>
-    Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, ich bin begeistert von der Resonanz!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
+    Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
     $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$link."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
     $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$msg."</p>";
     
     echo $text."<br><br>";
-    //mail($empfaenger, $betreff, $text, $from);
+    mail($empfaenger, $betreff, $text, $from);
 }
 
 function isMailAdrr($string) {
