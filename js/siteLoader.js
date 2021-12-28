@@ -296,7 +296,7 @@ fillWindow(1);
 
 openLinkedWindow();
 
-if(Math.random() > 0.25) {
+if(Math.random() > 0.25 && false) {
 	var interval = setInterval(function(){ 
 		if(Math.random() > 0.75) {
 			addPopup();
