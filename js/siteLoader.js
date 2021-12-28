@@ -276,8 +276,7 @@ function addAesthetics() {
 function openLinkedWindow() {
 	let no = window.location.search.substr(1);
 	if (no === "") {
-		//fillWindow(icons[0])
-		fillWindow(icons[5])
+		fillWindow(icons[0])
 		return;
 	}
 	no = parseInt(no);
@@ -293,7 +292,7 @@ createIcons();
 // Builds the menu
 build_menu();
 // Opens first Window
-//fillWindow(1);
+fillWindow(1);
 
 openLinkedWindow();
 
