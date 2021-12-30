@@ -1,5 +1,5 @@
-<body onload="playVid">
-    <video id="kinoVid" autoplay muted width=400 height=176>
+<body style="margin: 0;">
+    <video id="kinoVid" muted width=400 height=176 style="left: 0; top: 0;">
         <source src="https://crazyrec.de/DrunkenDentists/img/bg_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -9,4 +9,6 @@
     function playVid() {
         document.getElementById("kinoVid").play();
     }
+	
+	setTimeout(playVid, 500);
 </script>
