@@ -9,7 +9,7 @@
 <script>
 	function convText() {
 		var input = document.getElementById("inpTxt").value;
-		output = input.replace(/s/gi,"$").replace(/a/gi,"@").replace(/e/gi,"€").replace(/o/gi,"0");
+		output = input.replace(/s/gi,"$").replace(/a/gi,"@").replace(/e/gi,"€").replace(/o/gi,"0").replace(/i/gi,"!");
 		output = output.replace(/g€/gi,"GE");
 		document.getElementById("outTxt").value = output;
 	}
