@@ -110,7 +110,7 @@ else if ($update["message"]["sticker"] != []) {
 else {
 	$botAction = "/sendmessage";
 
-    if ($update["message"]["text"] == "\start") {
+    if ($update["message"]["text"] == "/start") {
         exit;
     }
 
