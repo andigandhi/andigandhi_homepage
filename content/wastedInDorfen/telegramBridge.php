@@ -134,4 +134,25 @@ $result = curl_exec($ch);
 curl_close($ch);
 //---- END API ----
 
+
+//delete message from chat with user
+$botAction = "/deleteMessage";
+
+$params=[
+    'chat_id' => $update["message"]["chat"]["id"],
+    'message_id' => $update["message"]["message_id"],
+];
+
+//---- SEND TO API ----
+$ch = curl_init($path . $botAction);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close($ch);
+//---- END API ----
 ?>
