@@ -4,19 +4,53 @@ include('telegramVar.php');
 
 $update = json_decode(file_get_contents("php://input"), TRUE);
 
-$params=[];
 
-/*
 // Test if user is in channel
-$botAction = "/sendphoto";
+$botAction = "/getChatMember";
 
 $params=[
     'chat_id' => $telegramchatid,
-    'caption' => $update["message"]["caption"],
-    'photo' => $update["message"]["photo"][0]["file_id"],
+    'user_id' => $update["message"]["from"]["id"],
 ];
-*/
 
+// Ask the API if user is member of channel
+
+//---- SEND TO API ----
+$ch = curl_init($path . $botAction);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close($ch);
+//---- END API ----
+
+$user_status = json_decode($result, TRUE)["result"]["status"];
+
+if ($user_status == "left" || $user_status == "kicked") {
+    $botAction = "/sendmessage";
+    $params=[
+        'chat_id' => $update["message"]["chat"]["id"],
+        'text' => $user_status."Du musst Mitglied von Wasted In Dorfen sein um schreiben zu können!",
+    ];
+	
+	//---- SEND TO API ----
+    $ch = curl_init($path . $botAction);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	//---- END API ----
+	exit;
+}
 
 
 // If message contains Photo --> send photo
@@ -82,7 +116,8 @@ else {
 	];
 }
 
-// Do the actual sending of message
+
+//---- SEND TO API ----
 $ch = curl_init($path . $botAction);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -93,5 +128,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close($ch);
+//---- END API ----
 
 ?>
