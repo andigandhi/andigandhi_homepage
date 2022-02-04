@@ -110,6 +110,10 @@ else if ($update["message"]["sticker"] != []) {
 else {
 	$botAction = "/sendmessage";
 
+    if ($update["message"]["text"] == "\start") {
+        exit;
+    }
+
 	$params=[
 		'chat_id' => $telegramchatid,
 		'text' => $update["message"]["text"], //json_encode($update, JSON_PRETTY_PRINT) <-- for debugging!
