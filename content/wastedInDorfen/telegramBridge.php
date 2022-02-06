@@ -71,7 +71,7 @@ else if ($update["message"]["video"] != []) {
     $params=[
         'chat_id' => $telegramchatid,
         'caption' => $update["message"]["caption"],
-        'video' => $update["message"]["video"][0]["file_id"],
+        'video' => $update["message"]["video"]["file_id"],
     ];
 }
 
