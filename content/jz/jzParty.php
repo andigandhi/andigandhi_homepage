@@ -7,10 +7,7 @@
 </head>
 
 <body style="text-align: center; font-size: large;">
-    <br><br><b>Die Links zur digitalen Juggeparty</b><br><br>
-	<a href="https://jz.andigandhi.ga" target="_blank" rel="noopener noreferrer">Digitales Jugge</a><br><br>
-    <!--<a href="https://meet.ffmuc.net/globalpauligeburtstag180421" target="_blank" rel="noopener noreferrer">Für schwache PCs: Nur der Dancefloor-Meetingraum</a><br><br><br>-->
-    <a href="https://meet.jit.si/globalpauligeburtstag180421" target="_blank" rel="noopener noreferrer">Für schwache PCs: Nur der Dancefloor-Meetingraum</a><br><br><br>
+	<a href="https://jz.grasserisen.de" target="_blank" rel="noopener noreferrer">Link zum Digitalen Jugge</a><br><br>
 	<b><a href="audio.php">Der Musik-Livestream</a></b><br><br><br><br>
 	<p><b>Meine Kamera geht irgendwie nicht?!</b></p>
     <p>Hast du Firefox installiert? Andere Browser haben leider Probleme mit der Kamera. Ansonsten: Hast du der Website gestattet auf die Kamera und das Mikrofon zuzugreifen?</p>

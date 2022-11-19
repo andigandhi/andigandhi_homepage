@@ -13,7 +13,6 @@ var siteLinks = [
 	['DJ Gion Porno', 'content/gigs.html'],
 	['Creepy Stuff', 'content/image.html'],
 	//['Sonstiges', ''],
-	//['Lebenslauf', 'content/business/lebenslauf.html'],
 	//['Impressum', 'content/impressum.html'],
 	//['Datenschutz', 'content/datenschutz.html'],
 ];
@@ -31,13 +30,10 @@ var icons = [
 	['', ''],
 	['Livestream', 'content/stream.html'],
 	['Wetter', 'https://wttr.in/', 1000, 700],
-	['Twitter', 'content/twitter.html'],
 	//['Coole Websites', 'content/links.html'],
 	['', ''],
 	['WLAN-Router', 'content/wlan.html'],
 	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true', 816, 210],
-	['Schach', 'content/chess/index.html', 500, 560],
-	['Minesweeper', 'http://www.freeminesweeper.org/minecore.html', 220, 260],
 ];
 
 
