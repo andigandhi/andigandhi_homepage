@@ -2,16 +2,20 @@
 Dies ist eine erste Implementierung, da ist noch vieeeel zu tun :)
 */
 
+let ownProfilePic;
 let userInfo;
 let connection_list = {};
+let requestCounter = 1;
 
 // The main function called by the button-click
 function circle_main() {
+    // Make Button invisible to prevent clicking
+    document.getElementById("btn_create").style.display = "none";
     // Get handle from Textfield
     let mastodon_handle = document.getElementById("txt_mastodon_handle").value;
     userInfo = formatedUserHandle(mastodon_handle);
     getStatuses();
-    setTimeout(showConnections,3000);
+    //setTimeout(showConnections,3000);
 }
 
 // Format the Mastodon Handle to an array: [username, userID, instance.tld]
@@ -26,16 +30,17 @@ function formatedUserHandle(mastodon_handle) {
 
 // Get the user ID from the handle
 function getIdFromName(name, server) {
-    // https://mieke.club/api/v1/accounts/lookup?acct=HeilandSanremo
     var xmlHttp = new XMLHttpRequest();
     let url = "https://"+server+"/api/v1/accounts/lookup?acct="+name;
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
-    return JSON.parse(xmlHttp.responseText)["id"];
+    let response = JSON.parse(xmlHttp.responseText);
+    ownProfilePic = response["avatar"];
+    return response["id"];
 }
 
 // Get a JSON String with all the posted statuses from the account and call processStatuses()
-function getStatuses() {
+async function getStatuses() {
     // Build the URL
     let url = "https://"+userInfo[2]+"/api/v1/accounts/"+userInfo[1]+"/statuses";
     // Do the async http request and call processStatuses()
@@ -46,35 +51,56 @@ function getStatuses() {
 function processStatuses(statuses) {
     jsonStat = JSON.parse(statuses);
 
-    let request_limit = Math.min(30, jsonStat.length);
+    let request_limit = 30;
 
-    console.log(request_limit)
-
-    for (var i=0; i<request_limit; i++) {
-        //if (jsonStat[i]["reblog"] != null) {
+    for (var i=0; i<jsonStat.length; i++) {
+        if (!jsonStat[i]["reblog"]) {
             evaluateStatus(jsonStat[i]["id"], (jsonStat[i]["favourites_count"]>0), (jsonStat[i]["reblogs_count"]>0));
-        //}
+            request_limit--;
+            if (request_limit<0) break;
+        }
     }
 }
 
+// Get all Reblogs and Favs for a status update
 function evaluateStatus(id, faved, rebloged) {
+    requestCounter += faved+rebloged+1;
     // Build the URL
     let url1 = "https://"+userInfo[2]+"/api/v1/statuses/"+id+"/reblogged_by";
     // Do the async http request
-    if (rebloged) httpRequest(url1, addRepostConnections, 3);
+    if (rebloged) httpRequest(url1, evalStatusInteractions, 1.3);
 
     // Build the URL
-    let url2 = "https://"+userInfo[2]+"/api/v1/statuses/"+id+"/favourited_by";
+    let url2 = "https://"+userInfo[2]+"/api/v1/statuses/"+id+"/context";
     // Do the async http request
-    if (faved) httpRequest(url2, addRepostConnections, 1);
+    httpRequest(url2, evalReplies, 1.1);
+
+    // Build the URL
+    let url3 = "https://"+userInfo[2]+"/api/v1/statuses/"+id+"/favourited_by";
+    // Do the async http request
+    if (faved) httpRequest(url3, evalStatusInteractions, 1.0);
 }
 
-function addRepostConnections(jsonString, plus) {
+// Evaluate the direct replies to tweets (no trees yet :( )
+function evalReplies(jsonString, plus) {
+    let jsonArray = JSON.parse(jsonString)["descendants"];
+
+    for (var i=0; i<jsonArray.length; i++) {
+        incConnectionValue(jsonArray[i]["account"], plus);
+    }
+
+    if (requestCounter<=0) showConnections();
+}
+
+// Evaluate the Favs and Reposts
+function evalStatusInteractions(jsonString, plus) {
     let jsonArray = JSON.parse(jsonString);
     
     for (var i=0; i<jsonArray.length; i++) {
         incConnectionValue(jsonArray[i], plus);
     }
+
+    if (requestCounter<=0) showConnections();
 }
 
 
@@ -88,8 +114,6 @@ function incConnectionValue(conJSON, plus) {
     }
     // Increment the connection strength
     connection_list[id]["conStrength"] = connection_list[id]["conStrength"] + plus;
-
-    //document.getElementById("outDiv").innerText = JSON.stringify(connection_list);
 }
 
 // Create a new node in the connection_list dictionary
@@ -105,23 +129,23 @@ function addNewConnection(jsonArray) {
 
 
 function showConnections() {
+    // Remove own User from Dict
+    if (userInfo[1] in connection_list) delete connection_list[userInfo[1]];
+
+    // Sort dict into Array items
     var items = Object.keys(connection_list).map(
         (key) => { return [key, connection_list[key]] });
-
     items.sort(
         (first, second) => { return second[1]["conStrength"] - first[1]["conStrength"] }
     );
-
-    for (var i=0; i<items.length; i++) {
-        //createUserObj(items[i][1])
-        if (!items[i][1]["bot"]) createUserObj(items[i][1]);
-    }
+    
+    // Render the Objects
+    render(items);
 }
 
 function createUserObj(usr) {
-    console.log(usr)
     let usrElement = document.createElement("div");
-    usrElement.innerHTML = "<img src=\""+usr["pic"]+"\" width=\"20px\"><b>"+usr["name"]+"</b>\t"+usr["acct"];
+    usrElement.innerHTML = "<img src=\""+usr["pic"]+"\" width=\"20px\">&nbsp;&nbsp;&nbsp;<b>"+usr["name"]+"</b>&nbsp;&nbsp;"+usr["acct"];
     document.getElementById("outDiv").appendChild(usrElement);
 }
 
@@ -131,10 +155,13 @@ function httpRequest(url, callback, callbackVal=null)
 {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            callback(xmlHttp.responseText, callbackVal);
-        } else if (xmlHttp.readyState == 4 && xmlHttp.status == 404)
-            callback("[]", callbackVal);
+        if (xmlHttp.readyState == 4) {
+            requestCounter--;
+            if (xmlHttp.status == 200) {
+                callback(xmlHttp.responseText, callbackVal);
+            } else
+                callback("[]", callbackVal);
+        }
     }
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);

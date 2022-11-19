@@ -7,7 +7,7 @@ var siteLinks = [
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Digitales Jugge <3', 'content/jz/jzParty.php'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
-	['Mastodon Bubble Generator', 'content/mastodon/image.html'],
+	['Mastodon Bubble Generator', 'content/mastodon/index.html', 1100, 1100],
 	['Altes',''],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
