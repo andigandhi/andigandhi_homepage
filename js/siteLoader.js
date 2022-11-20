@@ -30,6 +30,7 @@ var icons = [
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
+	['Troetpty', 'content/mastodon/index.html'],
 	['Wetter', 'https://wttr.in/', 1000, 700],
 	//['Coole Websites', 'content/links.html'],
 	['', ''],
