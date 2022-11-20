@@ -6,6 +6,8 @@ const radius = [64,58,50];
 let userNum = 0;
 
 function render(users) {
+	userNum = 0;
+
 	const canvas = document.getElementById("canvas");
 	const ctx = canvas.getContext("2d");
     
@@ -13,11 +15,10 @@ function render(users) {
 	const height = canvas.height;
 
 	// fill the background
-	ctx.fillStyle = "#C5EDCE";
-	ctx.fillRect(0, 0, width, height);
-    ctx.fillStyle = "#000000";
+	const bg_image = document.getElementById("mieke_bg");
+	ctx.drawImage(bg_image, 0, 0, 1000, 1000);
 
-    loadImage(ctx, ownProfilePic, (width/2)-110, (height/2)-110, 110, 110);
+	loadImage(ctx, ownProfilePic, (width/2)-110, (height/2)-110, 110, 110);
 
 	// loop over the layers
 	for (var layerIndex=0; layerIndex<3; layerIndex++) {
@@ -27,6 +28,8 @@ function render(users) {
 
 		// loop over each circle of the layer
 		for (let i = 0; i < numb[layerIndex]; i++) {
+			// if we are trying to render a circle but we ran out of users, just exit the loop. We are done.
+			if (userNum>=users.length) break;
 			// We need an offset or the first circle will always on the same line and it looks weird
 			// Try removing this to see what happens
 			const offset = layerIndex * 30;
@@ -48,12 +51,15 @@ function render(users) {
 			);
 
             userNum++;
-			// if we are trying to render a circle but we ran out of users, just exit the loop. We are done.
-			if (userNum>=users.length) break;
 		}
 	}
 
-    ctx.fillText("@sonnenbrandi@mieke.club mit lieben Grüßen an Duiker101", 700, 985, 290)
+	ctx.fillStyle = "#0505AA";
+	ctx.fillText("MIEKE", 10, 15, 40)
+	ctx.fillText("KRÖGER", width-50, 15, 40)
+	ctx.fillStyle = "#666666";
+	ctx.fillText("circle.grasserisen.de", width-120, height-15, 110)
+    //ctx.fillText("@sonnenbrandi@mieke.club mit lieben Grüßen an Duiker101", width-300, height-15, 290)
 };
 
 function get_layer(i) {
