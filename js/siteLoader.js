@@ -26,7 +26,7 @@ var icons = [
 	['Juggeparty', 'content/jz/jzParty.php'],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html'],
-	['Wichteln', 'content/wichteln/openWichtel.php'],
+	
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.html'],
@@ -274,7 +274,7 @@ function addAesthetics() {
 function openLinkedWindow() {
 	let no = window.location.search.substr(1);
 	if (no === "") {
-		fillWindow(icons[0])
+		fillWindow(1);
 		return;
 	}
 	no = parseInt(no);
@@ -289,8 +289,6 @@ function openLinkedWindow() {
 createIcons();
 // Builds the menu
 build_menu();
-// Opens first Window
-fillWindow(1);
 
 openLinkedWindow();
 

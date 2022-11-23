@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/98.css" />
+	<meta charset="utf-8">
+	<title>Cyber-Schrottwichteln</title>
+</head>
+
+<body>
+    <h2>Cyber-Schrottwichteln</h2>
+
+    <p>
+        <b>Wie funktioniert das hier?</b><br>
+        Im Formular unten musst du deine E-Mail Adresse oder einen anonymen Benutzernamen eingeben und irgendein random Bild hochladen.
+        Zudem kannst du auch noch eine kleine Nachricht hinterlassen.
+        Am <b>24. Dezember</b> werden die Bilder an zufällige E-Mail Adressen versendet, du bekommst also das bild irgendeiner anderen Person.</p>
+    <p>
+        Deine E-Mail-Adresse wird selbstverständlich vertraulich behandelt und nach dem Wichteln gelöscht.<br>
+        <b>Wenn du keine E-Mail Adresse angeben willst</b>, kannst du das ganze auch mit einem Benutzernamen machen, du kannst am 24. dann mit diesem Namen auf dein Wichtelgeschenk zugreifen.
+    </p>
+
+    <hr><br>
+
+	<form action="sent.php" method="post" enctype="multipart/form-data" style="text-align: center;">
+        <input type="text" id="emailTxt" class="form-control" name="email" placeholder="name@email.de oder anonymen Benutzernamen" required="required" size="63">
+        <br><br>
+        <label>Bilddatei auswählen (max. 5MB): 
+            <input name="fileToUpload" type="file" size="50" accept="image/*"> 
+        </label>
+        <br><br>
+        <textarea id="msgTxt" class="form-control" name="msg" placeholder="Optional: Eine kl Nachricht" rows="4" cols="60"></textarea>
+        <br><br>
+        <input type="submit" value="Wichtelgeschenk absenden" name="submit" id="idSubmit">
+    </form>
+</body>
+</html>
