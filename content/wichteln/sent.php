@@ -4,14 +4,17 @@
 function logMail() {
     global $username, $message, $target_dir, $songLink;
 
+    $fileName = '../../../andigandhi_files/wichtel2022.txt';
+    #$fileName = 'wichteln2022.json';
+
     // full log
-    $fp = fopen('wichtelLog.txt', 'a');
+    $fp = fopen($fileName.'.log', 'a');
     fwrite($fp, $_SERVER['REMOTE_ADDR'].'; '.$username.'; '.$songLink.'; '.$message);  
     fwrite($fp, "\r\n");  
     fclose($fp);
 
     //small log
-    $fp = fopen($target_dir . 'out.json', 'a');
+    $fp = fopen($target_dir . $fileName, 'a');
     fwrite($fp, '{"name": "'.$username.'", "link": "'.$songLink.'", "msg": "'.$message.'"},');  
     fwrite($fp, "\r\n");  
     fclose($fp);
@@ -31,10 +34,33 @@ $songLink = filter_var($_POST["songLink"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 //}
 
 logMail();
-echo "Danke fürs Mitmachen!<br>";
-echo "<b>Du bekommst dein digitales Schrottwichtel Geschenk am 24. Dezember!</b><br><br>";
 
-echo "<pre style=\"color: darkgreen;\">
+echo "
+<html>
+<head>
+	
+    <style>
+        body {
+            background-color: #112;
+            color: #CCA;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        textarea, input {
+            background-color: #334;
+            color: #DDF;
+            font-size: 120%;
+            width: 80%;
+
+        }
+    </style>
+	<meta charset=\"utf-8\">
+	<title>Cyber-Schrottwichteln</title>
+</head>
+<body>
+Danke fürs Mitmachen!<br>
+<b>Du bekommst dein digitales Wichtel-Geschenk am 24. Dezember!</b><br><br>
+<pre>
       .
    __/ \__
    \     /
@@ -46,5 +72,6 @@ echo "<pre style=\"color: darkgreen;\">
 .o.'.o.'.o.'.
    [_____]
     \___/
-    </pre>";
+    </pre>
+    </body>";
 ?>
