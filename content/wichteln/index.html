@@ -22,12 +22,12 @@
 </head>
 
 <body>
-    <h2 style="text-align: center;">Cyber-Schrottwichteln</h2>
+    <h1 style="text-align: center;">Cyber-Schrottwichteln</h1>
 
-    <p style="font-size: 150%; text-align: center;">
+    <p style="font-size: 150%; text-align: justify;">
         <b>Grüß dich!</b><br>
-        Du hattest 2022 einen Song, der dein Jahr versüßt hat? Dann ist das sonnenbrandi-Musikwichteln genau das Richtige für dich!<br><br>
-        In den Feldern unten kannst du deinen Mastodon-/Twitter-Namen eingeben, einen Musik-Link und vielleicht noch eine kleine Nachricht schreiben.
+        Du hattest 2022 einen Song, der dein Jahr versüßt hat? Oder hast du einfach nur so einen Ohrwurm den du gerne Teilen willst? Dann ist das <b>sonnenbrandi-Musikwichteln</b> genau das Richtige für dich!<br><br>
+        In den Feldern unten kannst du deinen <b>Mastodon-/Twitter-Namen</b> eingeben, einen <b>Musik-Link</b> und vielleicht noch eine kleine Nachricht schreiben.
         Dann noch auf "Wichtelgeschenk absenden" klicken und schon bist du fertig!<br><br>
         Am <b>24. Dezember</b> werden die Links an zufällige Teilnehmer versendet, du bekommst also ein Musikstück, dass irgendeine andere Person 2022 besonders bewegt hat.
     </p>
@@ -35,11 +35,11 @@
     <hr><br>
 
 	<form action="sent.php" method="post" enctype="multipart/form-data" style="text-align: center;">
-        <input type="text" id="usernameTxt" class="form-control" name="username" placeholder="@sonnenbrandi@mieke.club" required="required" size="63">
+        <input type="text" id="usernameTxt" class="form-control" name="username" placeholder="@sonnenbrandi@mieke.club" pattern="@?[a-zA-Z]+(@[a-zA-Z]+\.[a-zA-Z]+)?" required="required" size="63">
         <br><br>
         <input type="text" id="songTxt" class="form-control" name="songLink" placeholder="https://open.spotify.com/track/1wEeNtO7z41aUqC80shxqK?si=bb293fe510634d81" required="required" size="63">
         <br><br>
-        <textarea id="msgTxt" class="form-control" name="msg" placeholder="Optional: Eine kl Nachricht" rows="4" cols="60"></textarea>
+        <textarea id="msgTxt" class="form-control" name="msg" placeholder="Optional: Eine kl Nachricht" rows="4" cols="60" maxlength="300"></textarea>
         <br><br>
         <input type="submit" value="Wichtelgeschenk absenden" name="submit" id="idSubmit">
     </form>
