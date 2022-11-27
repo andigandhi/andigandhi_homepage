@@ -21,19 +21,19 @@ function logMail() {
 }
 
 $username = filter_var($_POST["username"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-str_replaceAll(";","",$username);
-str_replaceAll("\"","",$username);
-str_replaceAll("{","",$username);
+str_replace(";","",$username);
+str_replace("\"","",$username);
+str_replace("{","",$username);
 $message = filter_var(substr($_POST["msg"],0,500), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-str_replaceAll(";","",$message);
-str_replaceAll("\"","",$message);
-str_replaceAll("{","",$message);
+str_replace(";","",$message);
+str_replace("\"","",$message);
+str_replace("{","",$message);
 //Remove new lines
 $message = trim(preg_replace('/\s+/', ' ', $message));
 $songLink = filter_var($_POST["songLink"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-str_replaceAll(";","",$songLink);
-str_replaceAll("\"","",$songLink);
-str_replaceAll("{","",$songLink);
+str_replace(";","",$songLink);
+str_replace("\"","",$songLink);
+str_replace("{","",$songLink);
 
 logMail();
 
