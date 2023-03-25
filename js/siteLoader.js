@@ -3,7 +3,7 @@
 var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
-	['Livestream', 'content/stream.html', 820, 490],
+	['Livestream', 'content/stream.php', 820, 490],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Digitales Jugge <3', 'content/jz/jzParty.php'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
@@ -29,7 +29,7 @@ var icons = [
 	//['Wichteln', 'content/wichteln/index.html'],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
-	['Livestream', 'content/stream.html'],
+	['Livestream', 'content/stream.php'],
 	['Troetpty', 'content/mastodon/index.html'],
 	['Wetter', 'https://wttr.in/', 1000, 700],
 	//['Coole Websites', 'content/links.html'],
