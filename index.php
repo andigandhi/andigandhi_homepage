@@ -1,18 +1,18 @@
 <?php
-require 'matrix/MatrixTexter.php';
-include('matrix/matrixVar.php');
+// require 'matrix/MatrixTexter.php';
+// include('matrix/matrixVar.php');
 
-$accessToken = \MatrixTexter\login($homeserver, $username, $password);
+// $accessToken = \MatrixTexter\login($homeserver, $username, $password);
 
-function getIpAddr() {
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-	return $details->city;	
-}
+// function getIpAddr() {
+// 	$ip = $_SERVER['REMOTE_ADDR'];
+// 	$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+// 	return $details->city;	
+// }
 
-$message = date("H:i") . " Uhr: " . $_SERVER['REMOTE_ADDR'] . " (" . getIpAddr() . ")";
+// $message = date("H:i") . " Uhr: " . $_SERVER['REMOTE_ADDR'] . " (" . getIpAddr() . ")";
 
-\MatrixTexter\sendMessage($homeserver, $accessToken, $roomID, $message);
+// \MatrixTexter\sendMessage($homeserver, $accessToken, $roomID, $message);
 ?>
 
 <!doctype html>
