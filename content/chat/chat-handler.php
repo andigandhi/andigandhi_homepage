@@ -6,15 +6,14 @@
 		file_put_contents($filename, $file);
 	}
 
-	// Sends Telegram message to the channel
-	function telegram($msg) {
-		include('../../telegramVar.php');
-		$telegramchatid = -1001696986492;
-		$url="https://api.telegram.org/bot".$telegrambot."/sendMessage";$data=array("chat_id"=>$telegramchatid,"text"=>$msg);
-		$options=array("http"=>array("method"=>"POST","header"=>"Content-Type:application/x-www-form-urlencoded\r\n","content"=>http_build_query($data),),);
-		$context=stream_context_create($options);
-		$result=file_get_contents($url,false,$context);
-		return $result;
+	// Sends Matrix message to the channel
+	function matrixSend($msg) {
+		require '../../matrix/MatrixTexter.php';
+		include('../../matrix/matrixVar.php');
+
+		$accessToken = \MatrixTexter\login($homeserver, $username, $password);
+
+		\MatrixTexter\sendMessage($homeserver, $accessToken, $roomID, $msg);
 	}
 
 	function sendMessage($username, $msg) {
@@ -33,7 +32,7 @@
 			fclose($fp);
 			
 			// Send the message via telegram
-			telegram($username.": ".$msg);
+			matrixSend($username.": ".$msg);
 		}
 	}
 
