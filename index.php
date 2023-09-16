@@ -75,5 +75,7 @@
 	<!-- Loads the different window divs and the menu -->
 	<script src="js/siteLoader.js"></script>
 
+	<!-- Mastodon Verification -->
+	<a rel="me" href="https://defcon.social/@sonnenbrandi"></a>
 </body>
 </html>
