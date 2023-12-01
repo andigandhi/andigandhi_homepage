@@ -26,7 +26,7 @@ var icons = [
 	['Juggeparty', 'content/jz/jzParty.php'],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html'],
-	//['Wichteln', 'content/wichteln/index.html'],
+	['Wichteln', 'content/wichteln 2023/index.html'],
 	//['Hühner Cam', 'content/huhn.html', 800, 600],
 	['', ''],
 	['Livestream', 'content/stream.php'],
@@ -291,6 +291,7 @@ createIcons();
 build_menu();
 
 openLinkedWindow();
+fillWindow(['Wichteln', 'content/wichteln 2023/index.html']);
 
 if(Math.random() > 0.25 && false) {
 	var interval = setInterval(function(){ 
