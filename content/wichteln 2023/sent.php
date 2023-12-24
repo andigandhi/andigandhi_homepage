@@ -4,8 +4,8 @@
 function logMail() {
     global $username, $message, $target_dir, $songLink;
 
-    $fileName = '../../../andigandhi_files/wichtel2023.txt';
-    #$fileName = 'wichteln2023.json';
+    #$fileName = '../../../andigandhi_files/wichtel2023.txt';
+    $fileName = 'wichteln2023.json';
 
     // full log
     $fp = fopen($fileName.'.log', 'a');
@@ -19,6 +19,8 @@ function logMail() {
     fwrite($fp, "\r\n");  
     fclose($fp);
 }
+
+
 
 $username = filter_var($_POST["username"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 str_replace(";","",$username);
