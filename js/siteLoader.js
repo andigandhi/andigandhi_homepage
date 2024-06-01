@@ -3,15 +3,14 @@
 var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
-	['Livestream', 'content/stream.php', 820, 490],
-	['Kunst', 'content/april21/index.php', 920, 700],
-	['Digitales Jugge <3', 'content/jz/jzParty.php'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
 	['Mastodon Bubble Generator', 'content/mastodon/index.html'],
 	['Altes',''],
+	['Livestream', 'content/stream.php', 820, 490],
+	['Kunst', 'content/april21/index.php', 920, 700],
+	['Digitales Jugge <3', 'content/jz/jzParty.php'],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
-	['Creepy Stuff', 'content/image.html'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/

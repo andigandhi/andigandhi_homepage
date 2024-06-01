@@ -11,16 +11,20 @@
 	
 <body onResize="positionTaskbar()">
 
+	<!-- Creates the main Menu -->
 	<div class="window" id="mainMenu">
 		<div id="mainMenuSideBar"></div>
 		<div id="menuUL">
-			<img alt="" src="/img/index/andigandhi98.png" style="width: 150px" onload="positionTaskbar()">
+			<img alt="" src="/img/index/andigandhi98.png" style="width: 150px; margin-top: 5px;" onload="positionTaskbar()">
 		</div>
 	</div>
 	
 	<!-- Creates the Taskbar -->
 	<div class="window" id="taskbar">
+		<!-- Button for the main Menu -->
 		<button id="taskMenBtn" class="taskElement active" style="width: 30px; text-align: center" onClick="toggleMenu()"><img alt="" src="img/index/avatar.png" height="25px"></button>
+		<!-- Clock -->
+		<!-- <button class="active" id="btnClock">13:37</button> -->
 	</div>
 
 	<!-- Script to add the move listener to the window divs -->
