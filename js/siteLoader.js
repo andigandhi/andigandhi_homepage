@@ -3,16 +3,19 @@
 var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
+	// ['Lebenslauf', 'content-markdown/index.html?site=lebenslauf'],
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
-	['Mastodon Bubble Generator', 'content/mastodon/index.html'],
+	['Troetpty', 'content/mastodon/index.html'],
 	['Altes',''],
 	['Livestream', 'content/stream.php', 820, 490],
 	['Kunst', 'content/april21/index.php', 920, 700],
-	['Digitales Jugge <3', 'content/jz/jzParty.php'],
+	['Juggeparty', 'content/jz/jzParty.php'],
 	['Frohes Neues Jahr!','content/silvester.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
+	['Sonstiges',''],
+	['Changelog', 'content-markdown/index.html?site=changelog'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
@@ -184,7 +187,9 @@ function build_menu() {
 		} else {
 			ulRoot.appendChild(document.createElement("br"))
 			let li = document.createElement('button');
-			li.innerHTML += siteLinks[i][0];
+			li.style.height = "30px";
+			li.innerHTML = '<img alt="" src="/img/ico/'+siteLinks[i][0]+'.png" style="width: 20px; margin: 5px; float:left;">'
+			li.innerHTML += '<div style="height: 20px;line-height: 20px;margin: 5px;"><b>'+siteLinks[i][0]+'</b></div>';
 			li.className = "menuButton";
 			ul.appendChild(li);
 			li.setAttribute('onClick', 'fillWindow('+i+');');
