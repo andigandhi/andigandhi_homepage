@@ -16,6 +16,7 @@ var siteLinks = [
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['Sonstiges',''],
 	['Changelog', 'content-markdown/index.html?site=changelog'],
+	['Kontakt', 'content-markdown/index.html?site=kontakt'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
