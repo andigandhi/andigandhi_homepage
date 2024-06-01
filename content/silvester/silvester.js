@@ -7,7 +7,7 @@ function genPic() {
         ctx.drawImage(bg_img, 0, 0);
 		drawAllImg();
     }
-	bg_img.src = "../img/silvester/bg_"+Math.floor((Math.random() * 9) + 1)+".jpg"
+	bg_img.src = "/img/silvester/bg_"+Math.floor((Math.random() * 9) + 1)+".jpg"
 }
 
 function drawAllImg() {
@@ -16,7 +16,7 @@ function drawAllImg() {
 	drawImg(240,0,"txt")
 	if (Math.random()<0.01) drawImg(Math.floor(Math.random() * 200),Math.floor(Math.random() * 200),"pingu")
 	ctx.fillStyle = 'white'
-	ctx.fillText("andigandhi.ga",400,350)
+	ctx.fillText("andi.grasserisen.de",380,350)
 	ctx.fillText("4000+ kostenlose Silvestergrüße",10,350)
 }
 

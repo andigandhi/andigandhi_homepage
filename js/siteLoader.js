@@ -12,7 +12,7 @@ var siteLinks = [
 	['Livestream', 'content/stream.php', 820, 490],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Juggeparty', 'content/jz/jzParty.php'],
-	['Frohes Neues Jahr!','content/silvester.html'],
+	['Frohes Neues Jahr!','content/silvester/index.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['Sonstiges',''],
 	['Changelog', 'content-markdown/index.html?site=changelog'],
