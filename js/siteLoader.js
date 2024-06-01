@@ -3,6 +3,8 @@
 var siteLinks = [
 	['Menü',''],
 	['Start / News', 'content/index.html'],
+	['Chat', 'content/chat/chat.html'],
+	['Paint', 'content/paint/paint.html'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
 	['Mastodon Bubble Generator', 'content/mastodon/index.html'],
 	['Altes',''],
