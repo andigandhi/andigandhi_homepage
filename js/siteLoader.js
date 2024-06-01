@@ -14,8 +14,8 @@ var siteLinks = [
 	//['DJ Gion Porno', 'content/gigs.html'],
 	//['Creepy Stuff', 'content/image.html'],
 	//['Sonstiges', ''],
-	//['Impressum', 'content/impressum.html'],
-	//['Datenschutz', 'content/datenschutz.html'],
+	['Impressum', 'content/impressum.html'],
+	['Datenschutz', 'content/datenschutz.html'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
@@ -258,7 +258,7 @@ function randomBackgroundColor() {
 
 function addAesthetics() {
 	if (document.body.style.backgroundImage === "") {
-		document.body.style.backgroundImage = "url('../img/bg.jpg')";
+		document.body.style.backgroundImage = "url('/img/bg.jpg')";
 		document.getElementById("aestheticBtn").innerHTML = "wieder der einfarbige Hintergrund";
 		var audio = new Audio('https://www.winhistory.de/more/winstart/mp3/win95.mp3');
 		audio.play();
@@ -285,19 +285,16 @@ function openLinkedWindow() {
 	}
 }
 
-// Creates all the Desctop Icons
+// Creates all the Desktop Icons
 createIcons();
 // Builds the menu
 build_menu();
 
 openLinkedWindow();
-fillWindow(['Wichteln', 'content/wichteln 2023/index.html']);
 
-if(Math.random() > 0.25 && false) {
-	var interval = setInterval(function(){ 
-		if(Math.random() > 0.75) {
-			addPopup();
-			clearInterval(interval);
-		}
-	}, 5000);
-}
+/*var interval = setInterval(function(){ 
+	if(Math.random() > 0.75) {
+		addPopup();
+		clearInterval(interval);
+	}
+}, 5000);*/
