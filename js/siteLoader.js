@@ -11,10 +11,11 @@ var siteLinks = [
 	['Altes',''],
 	['Livestream', 'content/stream.php', 820, 490],
 	['Kunst', 'content/april21/index.php', 920, 700],
-	['Juggeparty', 'content/jz/jzParty.php'],
+	['Juggeparty', 'content-markdown/index.html?site=jugge'],
 	['Frohes Neues Jahr!','content/silvester/index.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['Sonstiges',''],
+	['Terminal','https://copy.sh/v86/?profile=archlinux'],
 	['Changelog', 'content-markdown/index.html?site=changelog'],
 	['Kontakt', 'content-markdown/index.html?site=kontakt'],
 ];
@@ -24,7 +25,7 @@ var siteLinks = [
 var icons = [
 	['Chat', 'content/chat/chat.html'],
 	['Paint', 'content/paint/paint.html'],
-	['Juggeparty', 'content/jz/jzParty.php'],
+	['Juggeparty', 'content-markdown/index.html?site=jugge'],
 	['Kunst', 'content/april21/index.php', 920, 700],
 	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html'],
 	['Wichteln', 'content/wichteln 2023/index.html'],
