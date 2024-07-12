@@ -15,7 +15,7 @@ var siteLinks = [
 	['Frohes Neues Jahr!','content/silvester/index.html'],
 	['1. April: Design my Tattoo', 'content/tattoo.html'],
 	['Sonstiges',''],
-	['Terminal','https://copy.sh/v86/?profile=archlinux'],
+	['Terminal','content/terminal/?profile=buildroot'],
 	['Changelog', 'content-markdown/index.html?site=changelog'],
 	['Kontakt', 'content-markdown/index.html?site=kontakt'],
 ];
