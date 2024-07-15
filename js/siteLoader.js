@@ -1,43 +1,43 @@
 // Links to the different sub-sites of the page
 // ['Name of the Link', 'link adress']
 var siteLinks = [
-	['Menü',''],
-	['Start / News', 'content/index.html'],
-	// ['Lebenslauf', 'content-markdown/index.html?site=lebenslauf'],
-	['Chat', 'content/chat/chat.html'],
-	['Paint', 'content/paint/paint.html'],
-	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html'],
-	['Troetpty', 'content/mastodon/index.html'],
-	['Altes',''],
-	['Livestream', 'content/stream.php', 820, 490],
-	['Kunst', 'content/april21/index.php', 920, 700],
-	['Juggeparty', 'content-markdown/index.html?site=jugge'],
-	['Frohes Neues Jahr!','content/silvester/index.html'],
-	['1. April: Design my Tattoo', 'content/tattoo.html'],
-	['Sonstiges',''],
-	['Terminal','content/terminal/?profile=buildroot'],
-	['Changelog', 'content-markdown/index.html?site=changelog'],
-	['Kontakt', 'content-markdown/index.html?site=kontakt'],
+	['Menü','',''],
+	['Start / News', 'content/index.html','start.png'],
+	['Lebenslauf', 'content-markdown/index.html?site=lebenslauf','lebenslauf.png'],
+	['Chat', 'content/chat/chat.html','chat.png'],
+	['Paint', 'content/paint/paint.html','paint.png'],
+	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html','sonderzeichen.png'],
+	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
+	['Altes','',''],
+	['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
+	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	['Livestream', 'content/stream.php','livestream.png', 820, 490],
+	['Kunst', 'content/april21/index.php','kunst.png', 920, 700],
+	['Juggeparty', 'content-markdown/index.html?site=jugge','jugge.png'],
+	['Frohes Neues Jahr!','content/silvester/index.html','silvester.png'],
+	['1. April: Design my Tattoo', 'content/tattoo.html','april.png'],
+	['Sonstiges','',''],
+	['Changelog', 'content-markdown/index.html?site=changelog','changelog.png'],
+	['Kontakt', 'content-markdown/index.html?site=kontakt','kontakt.png'],
+	//['Danksagungen - TODO!' , '', '']
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
 // ['Name / Name.png','link']
 var icons = [
-	['Chat', 'content/chat/chat.html'],
-	['Paint', 'content/paint/paint.html'],
-	['Juggeparty', 'content-markdown/index.html?site=jugge'],
-	['Kunst', 'content/april21/index.php', 920, 700],
-	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html'],
-	['Wichteln', 'content/wichteln 2023/index.html'],
-	//['Hühner Cam', 'content/huhn.html', 800, 600],
-	['', ''],
-	['Livestream', 'content/stream.php'],
-	['Troetpty', 'content/mastodon/index.html'],
-	['Wetter', 'https://wttr.in/', 1000, 700],
-	//['Coole Websites', 'content/links.html'],
-	['', ''],
-	['WLAN-Router', 'content/wlan.html'],
-	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true', 816, 210],
+	['Chat', 'content/chat/chat.html','chat.png'],
+	['Paint', 'content/paint/paint.html','paint.png'],
+	['Juggeparty', 'content-markdown/index.html?site=jugge','jugge.png'],
+	['Kunst', 'content/april21/index.php','kunst.png', 920, 700],
+	['Terminal','content/terminal/index.html','terminal.png'],
+	['', '',''],
+	['Livestream', 'content/stream.php','livestream.png'],
+	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
+	['Wetter', 'https://wttr.in/','wetter.png', 1000, 700],
+	['Coole Websites', 'content/links.html','seiten.png'],
+	['', '',''],
+	['WLAN-Router', 'content/wlan.html','wlan.png'],
+	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true','musik.png', 816, 210],
 ];
 
 
@@ -63,7 +63,7 @@ function addWindow(title, innerHtml, w, h, left, top) {
 	var titleBarIcon = document.createElement('div');
 	titleBarIcon.setAttribute('class', 'title-bar-controls');
 	titleBarIcon.innerHTML = "<button aria-label=\"Minimize\" onClick=\"toggleWindow("+id+")\"></button>";
-	//titleBarIcon.innerHTML += "<button aria-label=\"Maximize\" onClick=\"maximizeWindow("+id+")\"></button>";
+	titleBarIcon.innerHTML += "<button aria-label=\"Maximize\" onClick=\"maximizeWindow("+id+")\"></button>";
 	titleBarIcon.innerHTML += "<button aria-label=\"Close\" onClick=\"removeWindow("+id+")\"></button>";
 	titleBar.appendChild(titleBarIcon);
 	
@@ -119,8 +119,8 @@ function fillWindow(no, w, h) {
 		title = siteLinks[no][0];
 		link = siteLinks[no][1];
 		
-		w = siteLinks[no][2];
-		h = siteLinks[no][3];
+		w = siteLinks[no][3];
+		h = siteLinks[no][4];
 	}
 	
 	var left = Math.floor(Math.random() * 20);
@@ -190,7 +190,7 @@ function build_menu() {
 			ulRoot.appendChild(document.createElement("br"))
 			let li = document.createElement('button');
 			li.style.height = "30px";
-			li.innerHTML = '<img alt="" src="/img/ico/'+siteLinks[i][0]+'.png" style="width: 20px; margin: 5px; float:left;">'
+			if (siteLinks[i][2] != '') li.innerHTML = '<img alt="" src="/img/ico/'+siteLinks[i][2]+'" style="width: 20px; margin: 5px; float:left;">'
 			li.innerHTML += '<div style="height: 20px;line-height: 20px;margin: 5px;"><b>'+siteLinks[i][0]+'</b></div>';
 			li.className = "menuButton";
 			ul.appendChild(li);
@@ -237,10 +237,10 @@ function toggleMenu() {
 }
 
 // Creates a desktop icon
-function createIcon(name, link, w, h) {
+function createIcon(name, link, iconImage, w, h) {
 	var ico = document.createElement('div');
 	ico.setAttribute('class', 'icon');
-	ico.innerHTML = '<img alt="" src="img/ico/'+name+'.png" width="100%" style="cursor: pointer;" onClick="fillWindow([\''+name+'\', \''+link+'\'], '+w+', '+h+');">';
+	ico.innerHTML = '<img alt="" src="img/ico/'+iconImage+'" width="100%" style="cursor: pointer;" onClick="fillWindow([\''+name+'\', \''+link+'\'], '+w+', '+h+');">';
 	ico.innerHTML += name;
 	
 	addMoveListeners(ico, ico);
@@ -251,7 +251,7 @@ function createIcon(name, link, w, h) {
 // Creates all the icons of the array icon[] by calling createIcon()
 function createIcons() {
 	for (var i = 0; i < icons.length; i++) {
-		createIcon(icons[i][0], icons[i][1], icons[i][2], icons[i][3]);
+		createIcon(icons[i][0], icons[i][1], icons[i][2], icons[i][3], icons[i][4]);
 	}
 }
 
