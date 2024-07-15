@@ -7,7 +7,7 @@ function genPic() {
         ctx.drawImage(bg_img, 0, 0);
 		drawAllImg();
     }
-	bg_img.src = "/img/silvester/bg_"+Math.floor((Math.random() * 9) + 1)+".jpg"
+	bg_img.src = "img/bg_"+Math.floor((Math.random() * 9) + 1)+".jpg"
 }
 
 function drawAllImg() {
@@ -32,7 +32,7 @@ function drawImg(x,y,type) {
 	img.onload=function(){
         ctx.drawImage(img, x, y, img.width*2, img.height*2);
     }
-	img.src = "../img/silvester/"+type+"_"+num+".png"
+	img.src = "img/"+type+"_"+num+".png"
 }
 
 genPic();
