@@ -17,6 +17,7 @@ var siteLinks = [
 	['Frohes Neues Jahr!','content/silvester/index.html','silvester.png'],
 	['1. April: Design my Tattoo', 'content/tattoo.html','april.png'],
 	['Sonstiges','',''],
+	['Credits', 'content-markdown/index.html?site=credits','credits.png'],
 	['Changelog', 'content-markdown/index.html?site=changelog','changelog.png'],
 	['Kontakt', 'content-markdown/index.html?site=kontakt','kontakt.png'],
 	//['Danksagungen - TODO!' , '', '']
