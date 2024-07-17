@@ -45,7 +45,7 @@ var icons = [
 // ------ Methods for the window divs ------
 
 // Adds a new window with a innerHtml to the document
-function addWindow(title, innerHtml, w, h, left, top) {
+function addWindow(title, icon, innerHtml, w, h, left, top) {
 	var id = Math.floor((Math.random() * 1000000) + 1000);
 	
 	var win = document.createElement('div');
@@ -58,7 +58,8 @@ function addWindow(title, innerHtml, w, h, left, top) {
 	
 	var titleBarText = document.createElement('div');
 	titleBarText.setAttribute('class', 'title-bar-text');
-	titleBarText.innerHTML = title;
+	titleBarText.innerHTML = '<img alt="" src="/img/ico/'+icon+'" style="height: 11px; margin-right: 5px; float:left;">'
+	titleBarText.innerHTML += title;
 	titleBar.appendChild(titleBarText);
 	
 	var titleBarIcon = document.createElement('div');
@@ -111,15 +112,17 @@ function maximizeWindow(id) {
 // Creates the inner html for a Window and calls addWindow()
 function fillWindow(no, w, h) {
 	let title = "";
+	let icon = "";
 	let link = "";
 	let innerHTML = "";
 	if (typeof(no) === 'object') {
 		title = no[0];
 		link = no[1];
+		icon = no[2];
 	} else {
 		title = siteLinks[no][0];
 		link = siteLinks[no][1];
-		
+		icon = siteLinks[no][2];
 		w = siteLinks[no][3];
 		h = siteLinks[no][4];
 	}
@@ -139,7 +142,7 @@ function fillWindow(no, w, h) {
 		//innerHTML='<iframe width="800" height="450" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
 	}
 	
-	addWindow(title, innerHTML, w, h, left, top);
+	addWindow(title, icon, innerHTML, w, h, left, top);
 }
 
 // Creates the inner html for a popup window (smaller than a regular one) and calls addWindow()
@@ -147,7 +150,7 @@ function addPopup() {
 	var left = Math.floor((Math.random() * 80) + 0);
 	var top = Math.floor((Math.random() * 20) + 0);
 	//addWindow("Werbung", "<img alt='' src='img/corona-sticker-werbung.jpg' width=100% onclick='alert(\"Schreib mir einfach auf Instagram :)\")' style='cursor: pointer'>", 400, 300, left, top);
-	addWindow("Liebe Grüße", '<object type="text/html" data="/content/boomer-bild/index.html" width=500px height=400px style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>', 520, 430, left, top);
+	addWindow("Liebe Grüße", "", '<object type="text/html" data="/content/boomer-bild/index.html" width=500px height=400px style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>', 520, 430, left, top);
 }
 
 // Removes a window with a specific ID
@@ -241,7 +244,7 @@ function toggleMenu() {
 function createIcon(name, link, iconImage, w, h) {
 	var ico = document.createElement('div');
 	ico.setAttribute('class', 'icon');
-	ico.innerHTML = '<img alt="" src="img/ico/'+iconImage+'" width="100%" style="cursor: pointer;" onClick="fillWindow([\''+name+'\', \''+link+'\'], '+w+', '+h+');">';
+	ico.innerHTML = '<img alt="" src="img/ico/'+iconImage+'" width="100%" style="cursor: pointer;" onClick="fillWindow([\''+name+'\', \''+link+'\', \''+iconImage+'\'], '+w+', '+h+');">';
 	ico.innerHTML += name;
 	
 	addMoveListeners(ico, ico);
