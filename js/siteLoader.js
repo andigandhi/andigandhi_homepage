@@ -58,7 +58,7 @@ function addWindow(title, icon, innerHtml, w, h, left, top) {
 	
 	var titleBarText = document.createElement('div');
 	titleBarText.setAttribute('class', 'title-bar-text');
-	titleBarText.innerHTML = '<img alt="" src="/img/ico/'+icon+'" style="height: 11px; margin-right: 5px; float:left;">'
+	titleBarText.innerHTML = '<img alt="" src="/img/ico/'+icon+'" style="height: 12px; margin-right: 5px; margin-top: -1px; float:left;">'
 	titleBarText.innerHTML += title;
 	titleBar.appendChild(titleBarText);
 	
@@ -86,8 +86,10 @@ function addWindow(title, icon, innerHtml, w, h, left, top) {
 	var task = document.createElement('button');
 	task.setAttribute('id', id+'t');
 	task.setAttribute('class', 'taskElement active');
+	task.setAttribute('style', 'white-space:nowrap; overflow: hidden;')
 	task.setAttribute('onClick', 'toggleWindow('+id+')');
-	task.innerHTML = "<b>"+title+"</b>";
+	task.innerHTML = '<img alt="" src="/img/ico/'+icon+'" style="height: 19px; margin-right: 5px; margin-top:-4px; float:left;">'
+	task.innerHTML += "<b>"+title+"</b>";
 	document.getElementById("taskbar").appendChild(task);
 }
 
