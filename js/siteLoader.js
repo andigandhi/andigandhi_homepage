@@ -99,7 +99,9 @@ function maximizeWindow(id) {
 	
 	if (win.style.width == "100%") {
 		w = "816px";
-		h = "480px"
+		h = "480px";
+		win.style.top = "200px";
+		win.style.left = "250px";
 	} else {
 		win.style.top = "0";
 		win.style.left = "0";
@@ -107,6 +109,9 @@ function maximizeWindow(id) {
 	
 	win.style.width = w;
 	win.style.height = h;
+
+	win.getElementsByClassName("window-content")[0].width = win.clientWidth
+	win.getElementsByClassName("window-content")[0].height = win.clientHeight
 }
 
 // Creates the inner html for a Window and calls addWindow()
@@ -136,9 +141,9 @@ function fillWindow(no, w, h) {
 	}
 	
 	if (link.startsWith("http")) {
-		innerHTML='<iframe width="'+(w-16)+'px" height="'+(h-30)+'px" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
+		innerHTML='<iframe class="window-content" width="'+(w-16)+'px" height="'+(h-30)+'px" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
 	} else {
-		innerHTML='<object type="text/html" data="'+link+'" width="'+(w-16)+'px" height="'+(h-30)+'px" style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>';
+		innerHTML='<object type="text/html" class="window-content" data="'+link+'" width="'+(w-16)+'px" height="'+(h-30)+'px" style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>';
 		//innerHTML='<iframe width="800" height="450" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
 	}
 	
