@@ -256,50 +256,7 @@ function createIcons() {
 	}
 }
 
-
-
-
-
-// Menu Actions
-
-function einstellungen() {
-	let eDiv = document.getElementById("einstellungen");
-	if (eDiv.style.display == "inline") {
-		eDiv.style.display = "none";
-		document.getElementById("einstellungBtn").innerHTML = "Einstellungen öffnen";
-	} else {
-		eDiv.style.display = "inline";
-		document.getElementById("einstellungBtn").innerHTML = "Einstellungen schließen";
-	}
-}
-
-function randomBackgroundColor() {
-	var letters = '0123456789ABCDEF';
-	var color = '#';
-	for (var i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() * 16)];
-	}
-	document.body.style.backgroundColor = color;
-	if (document.body.style.backgroundImage !== "") {
-		addAesthetics();	
-	}
-}
-
-function addAesthetics() {
-	if (document.body.style.backgroundImage === "") {
-		document.body.style.backgroundImage = "url('/img/bg.jpg')";
-		document.getElementById("aestheticBtn").innerHTML = "wieder der einfarbige Hintergrund";
-		var audio = new Audio('https://www.winhistory.de/more/winstart/mp3/win95.mp3');
-		audio.play();
-	} else {
-		document.body.style.backgroundImage = "";
-		document.getElementById("aestheticBtn").innerHTML = "wieder den Wolkenhintergrund";
-	}
-}
-
-
-
-// Ermöglicht Links zu Unterseiten
+// Allows to open Windows using direct links
 function openLinkedWindow() {
 	let no = window.location.search.substr(1);
 	if (no === "") {
