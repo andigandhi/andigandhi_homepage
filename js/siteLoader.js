@@ -20,7 +20,26 @@ var siteLinks = [
 	['Credits', 'content-markdown/index.html?site=credits','credits.png'],
 	['Changelog', 'content-markdown/index.html?site=changelog','changelog.png'],
 	['Kontakt', 'content-markdown/index.html?site=kontakt','kontakt.png'],
-	//['Danksagungen - TODO!' , '', '']
+];
+var siteLinks_en = [
+	['Menu','',''],
+	['Start / News', 'content/index-en.html','start.png'],
+	['Curriculum vitae', 'content-markdown/index.html?site=lebenslauf','lebenslauf.png'],
+	['Chat', 'content/chat/chat.html','chat.png'],
+	['Paint', 'content/paint/paint.html','paint.png'],
+	['Text to $p€c14l ch4r4ct€r Converter', 'content/sonderzeichen.html','sonderzeichen.png'],
+	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
+	['Old Stuff','',''],
+	//['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
+	['Highway-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	['Livestream', 'content/stream.php','livestream.png', 820, 490],
+	['Art', 'content/april21/index.php','kunst.png', 920, 700],
+	['Happy New Year!','content/silvester/index.html','silvester.png'],
+	['April 1st: Design my Tattoo', 'content/tattoo.html','april.png'],
+	['Other Stuff','',''],
+	['Credits', 'content-markdown/index.html?site=credits','credits.png'],
+	['Changelog', 'content-markdown/index.html?site=changelog','changelog.png'],
+	['Contact', 'content-markdown/index.html?site=kontakt','kontakt.png'],
 ];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
@@ -40,6 +59,29 @@ var icons = [
 	['WLAN-Router', 'content/wlan.html','wlan.png'],
 	['Musik', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true','musik.png', 816, 210],
 ];
+var icons_en = [
+	['Chat', 'content/chat/chat.html','chat.png'],
+	['Paint', 'content/paint/paint.html','paint.png'],
+	['Party!!', 'content-markdown/index.html?site=jugge','jugge.png'],
+	['Art', 'content/april21/index.php','kunst.png', 920, 700],
+	['Terminal','content/terminal/index.html','terminal.png'],
+	['', '',''],
+	['Livestream', 'content/stream.php','livestream.png'],
+	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
+	['Weather', 'https://wttr.in/','wetter.png', 1000, 700],
+	['Cool Websites', 'content/links.html','seiten.png'],
+	['', '',''],
+	['WiFi-Router', 'content/wlan.html','wlan.png'],
+	['Music', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true','musik.png', 816, 210],
+];
+
+function setLanguage() {
+	var userLang = navigator.language || navigator.userLanguage; 
+	if (userLang != "dea") {
+		siteLinks = siteLinks_en;
+		icons = icons_en;
+	}
+}
 
 
 // ------ Methods for the window divs ------
@@ -280,6 +322,8 @@ function openLinkedWindow() {
 		fillWindow(no);
 	}
 }
+
+setLanguage()
 
 // Creates all the Desktop Icons
 createIcons();
