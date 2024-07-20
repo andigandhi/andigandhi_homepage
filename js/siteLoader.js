@@ -78,7 +78,7 @@ var icons_en = [
 
 function setLanguage() {
 	var userLang = navigator.language || navigator.userLanguage; 
-	if (userLang != "dea") {
+	if (userLang != "de") {
 		siteLinks = siteLinks_en;
 		icons = icons_en;
 	}
