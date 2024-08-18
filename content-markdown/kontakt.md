@@ -1,4 +1,4 @@
-# Kontakt
+# Contact
 - **E-Mail**: [andi@grasserisen.de](mailto:andi@grasserisen.de)
 - **[LinkedIn](https://www.linkedin.com/in/andreas-grasser-1b4a10246/)**
 - **[GitHub](https://github.com/andigandhi)**

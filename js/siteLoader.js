@@ -31,7 +31,7 @@ var siteLinks_en = [
 	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
 	['Old Stuff','',''],
 	//['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
-	['Highway-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	//['Autobahn-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
 	['Livestream', 'content/stream.php','livestream.png', 820, 490],
 	['Art', 'content/april21/index.php','kunst.png', 920, 700],
 	['Happy New Year!','content/silvester/index.html','silvester.png'],
