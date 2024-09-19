@@ -5,7 +5,7 @@
     var converter = new showdown.Converter();
     var client = new XMLHttpRequest();
     var site = new URLSearchParams(window.location.search).get('site');
-    site = site.replace(/\W/g, '');
+    //site = site.replace(/^(a-z\/)/g, ''); 
     client.open('GET', '/content-markdown/'+site+'.md');
     client.onreadystatechange = function() {
         html      = converter.makeHtml(client.responseText);
