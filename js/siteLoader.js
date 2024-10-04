@@ -31,7 +31,6 @@ var siteLinks_en = [
 	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
 	['Old Stuff','',''],
 	//['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
-	//['Autobahn-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
 	['Autobahn-Rave', 'content-markdown/index.html?site=autobahnrave/autobahnrave','autobahnrave.png'],
 	['Livestream', 'content/stream.php','livestream.png', 820, 490],
 	['Art', 'content/april21/index.php','kunst.png', 920, 700],
@@ -80,8 +79,8 @@ var icons_en = [
 function setLanguage() {
 	var userLang = navigator.language || navigator.userLanguage; 
 	if (userLang != "de") {
-		//siteLinks = siteLinks_en;
-		//icons = icons_en;
+		siteLinks = siteLinks_en;
+		icons = icons_en;
 	}
 }
 
@@ -158,6 +157,8 @@ function maximizeWindow(id) {
 
 	win.getElementsByClassName("window-content")[0].width = win.clientWidth - 16
 	win.getElementsByClassName("window-content")[0].height = win.clientHeight - 35
+	win.getElementsByClassName("window-body")[0].style.height = win.clientHeight - 35 + "px"
+	console.log(win.getElementsByClassName("window-body")[0].style.height)
 }
 
 // Creates the inner html for a Window and calls addWindow()
@@ -203,14 +204,6 @@ function fillWindow(no, w, h) {
 	addWindow(title, icon, innerHTML, w, h, left, top);
 }
 
-// Creates the inner html for a popup window (smaller than a regular one) and calls addWindow()
-function addPopup() {
-	var left = Math.floor((Math.random() * 80) + 0);
-	var top = Math.floor((Math.random() * 20) + 0);
-	//addWindow("Werbung", "<img alt='' src='img/corona-sticker-werbung.jpg' width=100% onclick='alert(\"Schreib mir einfach auf Instagram :)\")' style='cursor: pointer'>", 400, 300, left, top);
-	addWindow("Liebe Grüße", "", '<object type="text/html" data="/content/boomer-bild/index.html" width=500px height=400px style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>', 520, 430, left, top);
-}
-
 // Removes a window with a specific ID
 function removeWindow(id) {
 	document.body.removeChild(document.getElementById(id));
@@ -241,6 +234,8 @@ function build_menu() {
 	var ulRoot = document.getElementById('menuUL');
 	ul = ulRoot;
 
+	ulRoot.innerHTML= '<img alt="" src="/img/index/andigandhi98.png" style="width: 150px; margin-top: 5px;">'
+
 	for (var i = 0;i < siteLinks.length; i++) {
 		if (siteLinks[i][1] === '') {
 			ulRoot.appendChild(document.createElement("hr"))
@@ -264,6 +259,7 @@ function build_menu() {
 	positionTaskbar();
 }
 
+// Position the taskbar on the bottom
 function positionTaskbar() {
 	// don't show taskbar on mobile devices
 	var isMobile = false;
@@ -332,6 +328,7 @@ function openLinkedWindow() {
 	}
 }
 
+// Set the language of the page
 setLanguage()
 
 // Creates all the Desktop Icons
@@ -339,13 +336,5 @@ createIcons();
 // Builds the menu
 build_menu();
 
+// Open the first Window
 openLinkedWindow();
-
-/*
-var interval = setInterval(function(){ 
-	if(Math.random() > 0.75) {
-		addPopup();
-		clearInterval(interval);
-	}
-}, 5000);
-*/
