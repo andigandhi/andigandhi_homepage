@@ -1,30 +1,30 @@
-# Lebenslauf
+# Curriculum vitae
 
-## Ausbildung
-- Okt. 20 - Jun. 22: Masterstudium "Applied and Engineering Physics" an der TU München
-    - Schwerpunkt: erneuerbare Energien
-    - Abschlussarbeit: TODO am [Lehrstuhl für Energy Conversion and Storage](https://www.ph.nat.tum.de/energy/ecs/)
-- Okt. 17 - 20: Bachelorstudium der Physik an der TU München
-    - Abschlussarbeit: 
-- Sept. 09 - Jul. 17: Gymnasium Dorfen, allgemeine Hochschulreife
+## Education
+- **Oct. 20 - Jun. 22**: Master's programme "Applied and Engineering Physics" at the TU Munich
+    - Focus: renewable energies and battery technology
+    - Thesis: *Molecular Crowding Electrolytes as a Way Towards High-Energy Aqueous Sodium-Ion Batteries* at the [Chair of Energy Conversion and Storage](https://www.ph.nat.tum.de/energy/ecs/)
+- **Oct. 17 - 20**: Bachelor's degree in Physics at the TU Munich
+    - Final thesis: *Pre-series Test of the Amplifier-Shaper-Discriminator Chips for the Electronics Upgrade of the ATLAS MDT Chambers*
+- **Sept. 09 - Jul. 17**: Gymnasium Dorfen, general university entrance qualification
 
-## Arbeit
-- '22 - '24: [SySS GmbH](https://www.syss.de/)
-    - '22 - '23: Junior IT-Security Consultant
-    - '23 - '24: IT-Security Consultant
-    - '24 - '24: Referent für Cybersicherheit, Live-Hacker
+## Work
+- **Oct. 22 - today**: [SySS GmbH](https://www.syss.de/)
+    - **Oct. 22 - Aug. 23**: Junior IT-Security Consultant
+    - **Aug. 23 - today**: IT-Security Consultant
+    - **Apr. 24 - today**: Consultant for cyber security, live hacker
 
-## Kenntnisse und Interessen
-### IT-Kenntnisse
-- erweiterte Windows- und Linux-Kenntnisse
-- Programmierkenntnisse in Python, C, Java(-script), PHP
-- Hardware- und Elektronikkenntnisse
+## Knowledge and interests
+### IT skills
+- Advanced Windows and Linux knowledge
+- Programming skills in Python, C, Java(-script), PHP
+- Hardware and electronics knowledge
 
-### Ehrenamt
-- seit 2018: Schriftführer und 3. Vorsitzender des [Pfarrgemeinderates Isen](https://www.erzbistum-muenchen.de/pfarrei/pv-isen/cont/74614)
-- seit 2016: Wahlhelfer, (stellvertretender) Schriftführer in Isen
+### Honorary position
+- since 2018: Secretary and 3rd chairman of the [Pfarrgemeinderat Isen (Parish Council)](https://www.erzbistum-muenchen.de/pfarrei/pv-isen/cont/74614)
+- since 2016: Election assistant (secretary) in Isen
 
 ### Hobbies
-- Rennradfahren
-- Gitarre-Spielen
-- Elektronik-Basteleien
+- Road cycling
+- Playing the guitar
+- Electronics tinkering

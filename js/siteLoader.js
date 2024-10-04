@@ -31,7 +31,7 @@ var siteLinks_en = [
 	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
 	['Old Stuff','',''],
 	//['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
-	['Highway-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	//['Autobahn-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
 	['Livestream', 'content/stream.php','livestream.png', 820, 490],
 	['Art', 'content/april21/index.php','kunst.png', 920, 700],
 	['Happy New Year!','content/silvester/index.html','silvester.png'],
@@ -73,11 +73,12 @@ var icons_en = [
 	['', '',''],
 	['WiFi-Router', 'content/wlan.html','wlan.png'],
 	['Music', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true','musik.png', 816, 210],
+	['Friends', 'content-markdown/index.html?site=friends','internet-friends.png']
 ];
 
 function setLanguage() {
 	var userLang = navigator.language || navigator.userLanguage; 
-	if (userLang != "dea") {
+	if (userLang != "de") {
 		siteLinks = siteLinks_en;
 		icons = icons_en;
 	}
@@ -154,8 +155,8 @@ function maximizeWindow(id) {
 	win.style.width = w;
 	win.style.height = h;
 
-	win.getElementsByClassName("window-content")[0].width = win.clientWidth
-	win.getElementsByClassName("window-content")[0].height = win.clientHeight
+	win.getElementsByClassName("window-content")[0].width = win.clientWidth - 16
+	win.getElementsByClassName("window-content")[0].height = win.clientHeight - 35
 }
 
 // Creates the inner html for a Window and calls addWindow()

@@ -1,8 +1,12 @@
 # Changelog andi.grasserisen.de
 
+## 20.07.2024
+- Added English language support
+- Improved start site
+
 ## 15.07.2024
 - Terminal CTF hinzugefügt
-- Miximieren-Knopf eingefügt - noch nicht mit den meisten Seiten kompatibel :(
+- Maximieren-Knopf eingefügt - noch nicht mit den meisten Seiten kompatibel :(
 
 ## 01.05.2024
 - Startmenü umstrukturiert und neu designed

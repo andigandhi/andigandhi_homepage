@@ -12,15 +12,15 @@
 	<canvas id="can" width="900px" height="500px" style="position: absolute; background-color: #FFF;"></canvas>
 	<div style="position: absolute; margin-top: 520px;">
 		
-		<label for="size">Pinsel-Grösse</label>
+		<label for="size">Size</label>
 		<input type="range" id="size" name="vol" min="1" max="30" onChange="updateBrush()">
 		
-		<label for="palette">Pinsel-Farbe</label>
+		<label for="palette">Color</label>
 		<fieldset id="palette" style="margin-bottom: 10px;"></fieldset>
 		
 		<div id="resultDiv">
 			<input id="userInput" placeholder="@andigandhi" style="width: 500px;">
-			<button onClick="saveImage()" id="sendBtn" style="width: 370px;">Das Gemälde einreichen</button>
+			<button onClick="saveImage()" id="sendBtn" style="width: 370px;">Submit the artwork</button>
 		</div>
 	</div>
 </body>
