@@ -10,7 +10,7 @@ var siteLinks = [
 	['Troetpty', 'content/mastodon/index.html','mastodon.png'],
 	['Altes','',''],
 	['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
-	['Autobahnrave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	['Autobahn-Rave', 'content-markdown/index.html?site=autobahnrave/autobahnrave','autobahnrave.png'],
 	['Livestream', 'content/stream.php','livestream.png', 820, 490],
 	['Kunst', 'content/april21/index.php','kunst.png', 920, 700],
 	['Juggeparty', 'content-markdown/index.html?site=jugge','jugge.png'],
@@ -32,6 +32,7 @@ var siteLinks_en = [
 	['Old Stuff','',''],
 	//['Wichteln', 'content/wichteln 2023/index.html','wichteln.png'],
 	//['Autobahn-Rave', 'content/autobahnrave4/zusammenfassung.html','autobahnrave.png'],
+	['Autobahn-Rave', 'content-markdown/index.html?site=autobahnrave/autobahnrave','autobahnrave.png'],
 	['Livestream', 'content/stream.php','livestream.png', 820, 490],
 	['Art', 'content/april21/index.php','kunst.png', 920, 700],
 	['Happy New Year!','content/silvester/index.html','silvester.png'],
@@ -79,8 +80,8 @@ var icons_en = [
 function setLanguage() {
 	var userLang = navigator.language || navigator.userLanguage; 
 	if (userLang != "de") {
-		siteLinks = siteLinks_en;
-		icons = icons_en;
+		//siteLinks = siteLinks_en;
+		//icons = icons_en;
 	}
 }
 
@@ -164,7 +165,7 @@ function fillWindow(no, w, h) {
 	let title = "";
 	let icon = "";
 	let link = "";
-	let innerHTML = "";
+	let innerHTML = "a";
 	if (typeof(no) === 'object') {
 		title = no[0];
 		link = no[1];
@@ -187,11 +188,18 @@ function fillWindow(no, w, h) {
 	
 	if (link.startsWith("http")) {
 		innerHTML='<iframe class="window-content" width="'+(w-16)+'px" height="'+(h-30)+'px" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
+	} else if (link.endsWith(".direct.html")) {
+		var client = new XMLHttpRequest();
+		client.open('GET', link);
+		client.onloadend = function() {
+			innerHTML=client.responseText;
+			addWindow(title, icon, innerHTML, w, h, left, top);
+		}
+		client.send();
+		return
 	} else {
 		innerHTML='<object type="text/html" class="window-content" data="'+link+'" width="'+(w-16)+'px" height="'+(h-30)+'px" style="overflow-right: hidden;" onmouseover = "mouseMove(\'event\')"></object>';
-		//innerHTML='<iframe width="800" height="450" type="text/html" src="'+link+'" frameborder="0" allowfullscreen onmouseover = "mouseMove(\'event\')"></iframe>';
 	}
-	
 	addWindow(title, icon, innerHTML, w, h, left, top);
 }
 
