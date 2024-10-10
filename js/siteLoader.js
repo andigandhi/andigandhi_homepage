@@ -3,7 +3,7 @@
 var siteLinks = [
 	['Menü','',''],
 	['Start / News', 'content/index.html','start.png'],
-	['Lebenslauf', 'content-markdown/index.html?site=lebenslauf','lebenslauf.png'],
+	['Lebenslauf', 'content/lebenslauf/index.html','lebenslauf.png'],
 	['Chat', 'content/chat/chat.html','chat.png'],
 	['Paint', 'content/paint/paint.html','paint.png'],
 	['Text zu $0nd€rz€ich€n Converter', 'content/sonderzeichen.html','sonderzeichen.png'],
@@ -24,7 +24,7 @@ var siteLinks = [
 var siteLinks_en = [
 	['Menu','',''],
 	['Start / News', 'content/index-en.html','start.png'],
-	['Curriculum vitae', 'content-markdown/index.html?site=lebenslauf','lebenslauf.png'],
+	['Curriculum vitae', 'content/lebenslauf/index.html','lebenslauf.png'],
 	['Chat', 'content/chat/chat.html','chat.png'],
 	['Paint', 'content/paint/paint.html','paint.png'],
 	['Text to $p€c14l ch4r4ct€r Converter', 'content/sonderzeichen.html','sonderzeichen.png'],
