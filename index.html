@@ -5,16 +5,15 @@
 	<link rel="stylesheet" href="https://unpkg.com/98.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>andigandhi98</title>
 </head>
 	
-<body onResize="positionTaskbar()" onload="positionTaskbar()">
+<body onResize="positionTaskbar()" onLoad="positionTaskbar()">
 
 	<!-- Creates the main Menu -->
 	<div class="window" id="mainMenu">
 		<div id="mainMenuSideBar"></div>
-		<div id="menuUL">
+		<div id="menu_content">
 		</div>
 	</div>
 	
@@ -22,8 +21,6 @@
 	<div class="window" id="taskbar">
 		<!-- Button for the main Menu -->
 		<button id="taskMenBtn" class="taskElement active" style="width: 30px; text-align: center" onClick="toggleMenu()"><img alt="" src="img/index/avatar.png" height="25px"></button>
-		<!-- Clock TODO -->
-		<!-- <button class="active" id="btnClock">13:37</button> -->
 	</div>
 
 	<!-- Script to add the move listener to the window divs -->
