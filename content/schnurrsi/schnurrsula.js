@@ -115,15 +115,12 @@ function oneko(nekoPosX, nekoPosY) {
   let lastFrameTimestamp;
 
   function onAnimationFrame(timestamp) {
-    // Stops execution if the neko element is removed from DOM
-    if (!nekoEl.isConnected) {
-      return;
-    }
     if (!lastFrameTimestamp) {
       lastFrameTimestamp = timestamp;
     }
-    if (timestamp - lastFrameTimestamp > 100) {
+    if (timestamp - lastFrameTimestamp > 200) {
       lastFrameTimestamp = timestamp
+      console.log("Hallo")
       frame()
     }
     window.requestAnimationFrame(onAnimationFrame);
