@@ -120,7 +120,6 @@ function oneko(nekoPosX, nekoPosY) {
     }
     if (timestamp - lastFrameTimestamp > 200) {
       lastFrameTimestamp = timestamp
-      console.log("Hallo")
       frame()
     }
     window.requestAnimationFrame(onAnimationFrame);
