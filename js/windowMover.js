@@ -103,12 +103,13 @@ function touchMove(e) {
       x: e.changedTouches[0].clientX,
       y: e.changedTouches[0].clientY,
     };
-    if (
-      touchPosition.x + offset[0] + div.clientWidth - 15 <=
-      document.body.clientWidth
-    ) {
-      div.style.left = touchPosition.x + offset[0] + "px";
+
+    var new_x = touchPosition.x + offset[0];
+    if (new_x + div.clientWidth - 15 > document.body.clientWidth) {
+      new_x = document.body.clientWidth + 15 - div.clientWidth;
     }
+    div.style.left = new_x + "px";
+
     div.style.top = touchPosition.y + offset[1] + "px";
   }
 }
