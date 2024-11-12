@@ -1,46 +1,88 @@
-<!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://unpkg.com/98.css" />
-	<meta charset="utf-8">
+
     <style>
         body {
+            background-color: #112;
+            color: #CCA;
+            padding-left: 5%;
+            padding-right: 5%;
             text-align: center;
+            font-size: 120%;
+        }
+        textarea, input {
+            background-color: #334;
+            color: #DDF;
+            font-size: 120%;
+            width: 80%;
+
         }
     </style>
+	<meta charset=\"utf-8\">
 	<title>Cyber-Schrottwichteln</title>
 </head>
 
 <body>
     <?php
-    if ($_POST["email"] == "") {
-    echo '
-    <h2>Cyber-Schrottwichteln</h2>
-	<form action="" method="post" style="text-align: center;">
-        <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63">
-        <input type="submit" value="Wichtelbild einsehen" name="submit" id="idSubmit">
-    </form>
-    ';
+    // Function to search in the Array
+    function getArrayElement($array, $element)
+    {
+        $length = count($array);
+        for ($i = 0; $i < $length; $i++) {
+            if ($array[$i]["name"] == $element) {
+                return ($i + 1) % $length;
+            }
+        }
+        return null;
     }
-    else {
-        $fp = @fopen('../../../andigandhi_files/wichtelConnections.txt', 'r');
-        if ($fp) {
-            $array = explode("\r", fread($fp, filesize('../../../andigandhi_files/wichtelConnections.txt')));
-        }
-        $searchMd5 = md5($_POST["email"]);
-        
-        for ($i = 0; $i < count($array); $i++) {
-            $curr = explode("; ", $array[$i]);
-            if ($curr[0] == $searchMd5) break;
+
+    $wichtelFile = "../../../andigandhi_files/wichtelConnections.txt";
+    // $wichtelFile = "wichteln2022.json";
+
+    if ($_POST["email"] == "") {
+        echo '
+            <h2>Cyber-Schrottwichteln</h2>
+           	<form action="" method="post" style="text-align: center;">
+                <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63">
+                <input type="submit" value="Wichtelbild einsehen" name="submit" id="idSubmit">
+            </form>
+        ';
+    } else {
+        $json = file_get_contents($wichtelFile);
+
+        $json = "[" . $json . "]";
+
+        if ($json === false) {
+            die("Error reading the JSON file");
         }
 
-        $text  = "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Schrottwichtel-Bild:<br><br>";
-        $text .= "<img src=\"https://andigandhi.ga/content/wichteln/".$curr[1]."\" alt=\"Wichtelbild\" style=\"width: 50%; height: auto;\"><br>";
-        $text .= "<p>Zusätzliche Nachricht vom Wichtel:</p><p>".$curr[2]."</p>";
-        
-        echo $text."<br><br>";
+        $json_data = json_decode($json, true);
 
-        fclose($fp);
+        if ($json_data === null) {
+            die("Error decoding the JSON file");
+        }
+
+        $elementNo = getArrayElement($json_data, $_POST["email"]);
+        $element = $json_data[$elementNo];
+
+        $text =
+            "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Song:<br><br><b>";
+        if (str_starts_with($element["link"], "http")) {
+            $text .=
+                "<a href=\"" .
+                $element["link"] .
+                "\">" .
+                $element["link"] .
+                "</a>";
+        } else {
+            $text .= $element["link"];
+        }
+        $text .=
+            "</b><p>Zusätzliche Nachricht vom Wichtel:</p><p>" .
+            $element["msg"] .
+            "</p>";
+
+        echo $text . "<br><br>";
     }
     ?>
 </body>

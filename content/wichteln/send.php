@@ -4,8 +4,7 @@ function logMail()
 {
     global $username, $message, $target_dir, $songLink;
 
-    #$fileName = '../../../andigandhi_files/wichtel2022.txt';
-    $fileName = "wichteln2022.json";
+    $fileName = "../../../andigandhi_files/wichtel2022.txt";
 
     // full log
     $fp = fopen($fileName . ".log", "a");
@@ -24,6 +23,7 @@ function logMail()
 
     //small log
     $fp = fopen($target_dir . $fileName, "a");
+    fwrite($fp, ",\r\n");
     fwrite(
         $fp,
         '{"name": "' .
@@ -32,9 +32,8 @@ function logMail()
             $songLink .
             '", "msg": "' .
             $message .
-            '"},'
+            '"}'
     );
-    fwrite($fp, "\r\n");
     fclose($fp);
 }
 
@@ -58,44 +57,8 @@ str_replace("{", "", $songLink);
 
 logMail();
 
-echo "
-<html>
-<head>
+header("Location: bestaetigung.html");
+die();
 
-    <style>
-        body {
-            background-color: #112;
-            color: #CCA;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-        textarea, input {
-            background-color: #334;
-            color: #DDF;
-            font-size: 120%;
-            width: 80%;
-
-        }
-    </style>
-	<meta charset=\"utf-8\">
-	<title>Cyber-Schrottwichteln</title>
-</head>
-<body>
-Danke fürs Mitmachen!<br>
-<b>Du kannst ab dem 24. Dezember wieder hierher zurückkommen und dir deinen Wichtel-Song abholen!</b><br><br>
-<pre>
-      .
-   __/ \__
-   \     /
-   /.'o'.\
-    .o.'.
-   .'.'o'.
-  o'.o.'.o.
- .'.o.'.'.o.
-.o.'.o.'.o.'.
-   [_____]
-    \___/
-    </pre>
-    </body>";
 
 ?>

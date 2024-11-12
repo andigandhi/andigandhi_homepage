@@ -12,16 +12,19 @@
             input {
                 background-color: #334;
                 color: #ddf;
-                font-size: 120%;
+                font-size: 200%;
                 width: 80%;
+            }
+            input[type="submit"] {
+                height: 150px;
             }
         </style>
         <meta charset="utf-8" />
-        <title>Cyber-Schrottwichteln</title>
+        <title>Musikwichteln</title>
     </head>
 
     <body>
-        <h1 style="text-align: center">Cyber-Schrottwichteln</h1>
+        <h1 style="text-align: center">Musikwichteln 2024</h1>
 
         <p style="font-size: 150%; text-align: justify">
             <b>Grüß dich!</b><br />
@@ -36,14 +39,14 @@
             schon bist du fertig!<br /><br />
             Am <b>24. Dezember</b> werden die Links an zufällige Teilnehmer
             versendet, du bekommst also ein Musikstück, dass irgendeine andere
-            Person 2022 besonders bewegt hat.<br />
+            Person 2024 besonders bewegt hat.<br />
         </p>
 
         <hr />
         <br />
 
         <form
-            action="sent.php"
+            action="send.php"
             method="post"
             enctype="multipart/form-data"
             style="text-align: center"
@@ -63,7 +66,7 @@
                 id="songTxt"
                 class="form-control"
                 name="songLink"
-                placeholder="https://open.spotify.com/track/1w..."
+                placeholder='"https://open.spotify.com/track/1w..." oder "Flo Rida - GDFR"'
                 required="required"
                 size="63"
             />
@@ -72,7 +75,7 @@
                 id="msgTxt"
                 class="form-control"
                 name="msg"
-                placeholder="Optional: Eine kl Nachricht"
+                placeholder="Optional: Eine kleine Nachricht"
                 rows="4"
                 cols="60"
                 maxlength="300"
