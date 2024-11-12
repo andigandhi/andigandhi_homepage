@@ -133,9 +133,9 @@ function addWindow(title, icon, innerHtml, w, h, left, top) {
     h +
     "px; left: " +
     left +
-    "%; top: " +
+    "px; top: " +
     top +
-    "%";
+    "px";
 
   // Create the title bar of the window
   var title_bar = document.createElement("div");
@@ -249,13 +249,18 @@ function fillWindow(no, w, h) {
     h = menu_icons[no][4];
   }
 
-  var left = Math.floor(Math.random() * 20);
-  var top = Math.floor(Math.random() * 15 + 1);
-
   if (typeof w === "undefined") {
     w = 816;
     h = 480;
   }
+
+  var left = Math.floor(Math.random() * (document.body.clientWidth - w));
+
+  var top =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight;
+  top = Math.floor(Math.random() * (top - h - 50));
 
   if (link.startsWith("http")) {
     // IFrame for external links
