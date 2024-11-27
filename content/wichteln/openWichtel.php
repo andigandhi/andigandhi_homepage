@@ -36,7 +36,7 @@
         return null;
     }
 
-    $wichtelFile = "../../../andigandhi_files/wichtelConnections.txt";
+    $wichtelFile = "../../../andigandhi_files/wichtel2024.txt";
     // $wichtelFile = "wichteln2022.json";
 
     if ($_POST["email"] == "") {
@@ -66,7 +66,7 @@
         $element = $json_data[$elementNo];
 
         $text =
-            "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Cyber-Schrottwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Song:<br><br><b>";
+            "<h2>Hey!</h2><p>Ich bin's der sonnenbrandi, ich wünsche Dir einen wundervollen Heiligabend!</p><p>Danke dass du beim Musikwichteln mitgemacht hast, es hat mir sehr viel Spaß gemacht!</p><br><br>Hier ist dein Song:<br><br><b>";
         if (str_starts_with($element["link"], "http")) {
             $text .=
                 "<a href=\"" .
