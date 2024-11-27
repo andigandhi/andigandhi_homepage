@@ -4,7 +4,7 @@ function logMail()
 {
     global $username, $message, $target_dir, $songLink;
 
-    $fileName = "../../../andigandhi_files/wichtel2024.txt";
+    $fileName = "files/wichtel2024.txt";
 
     // full log
     $fp = fopen($fileName . ".log", "a");

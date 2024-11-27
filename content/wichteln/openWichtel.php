@@ -36,8 +36,7 @@
         return null;
     }
 
-    $wichtelFile = "../../../andigandhi_files/wichtel2024.txt";
-    // $wichtelFile = "wichteln2022.json";
+    $wichtelFile = "files/wichtel2024.txt";
 
     if ($_POST["email"] == "") {
         echo '
