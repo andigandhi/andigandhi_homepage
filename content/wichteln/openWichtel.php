@@ -28,8 +28,9 @@
     function getArrayElement($array, $element)
     {
         $length = count($array);
+        $elem_reg = preg_replace("/\W/", "", $element);
         for ($i = 0; $i < $length; $i++) {
-            if ($array[$i]["name"] == $element) {
+            if (preg_replace("/\W/", "", $array[$i]["name"]) == $elem_reg) {
                 return ($i + 1) % $length;
             }
         }
@@ -62,6 +63,11 @@
         }
 
         $elementNo = getArrayElement($json_data, $_POST["email"]);
+
+        if ($elementNo == "") {
+            die("Nutzer nicht gefunden :(");
+        }
+
         $element = $json_data[$elementNo];
 
         $text =
