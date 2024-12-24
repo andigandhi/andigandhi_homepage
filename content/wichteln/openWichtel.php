@@ -78,7 +78,7 @@
             $text .=
                 "<a href=\"" .
                 $element["link"] .
-                "\">" .
+                "\" target=\"_blank\" rel=\"noopener noreferrer\">" .
                 $element["link"] .
                 "</a>";
         } else {
