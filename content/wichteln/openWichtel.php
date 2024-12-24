@@ -10,12 +10,14 @@
             text-align: center;
             font-size: 120%;
         }
-        textarea, input {
+        input {
             background-color: #334;
-            color: #DDF;
-            font-size: 120%;
+            color: #ddf;
+            font-size: 200%;
             width: 80%;
-
+        }
+        input[type="submit"] {
+            height: 150px;
         }
     </style>
 	<meta charset=\"utf-8\">
@@ -43,7 +45,7 @@
         echo '
             <h2>Cyber-Schrottwichteln</h2>
            	<form action="" method="post" style="text-align: center;">
-                <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63">
+                <input type="text" id="emailTxt" class="form-control" name="email" placeholder="Dein Benutzername oder E-Mail" required="required" size="63"><br><br>
                 <input type="submit" value="Wichtelbild einsehen" name="submit" id="idSubmit">
             </form>
         ';
