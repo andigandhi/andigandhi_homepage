@@ -497,13 +497,32 @@ function openLinkedWindow() {
     fillWindow(1);
     return;
   }
-  window_no = parseInt(window_no);
+  if (isNaN(window_no)) {
+    // It is possible to create a direct link using the name of the array element
+    var combinedArray = menu_icons.concat(desktop_icons);
+    for (var i = 0; i < combinedArray.length; i++) {
+      // Case insensitive String compare
+      if (
+        combinedArray[i][0].localeCompare(window_no, undefined, {
+          sensitivity: "base",
+        }) === 0
+      ) {
+        window_no = i;
+        break;
+      }
+    }
+  } else {
+    // Numerical links are also possible
+    window_no = parseInt(window_no);
+  }
+
   let window_id = null;
   if (window_no >= menu_icons.length) {
     window_id = fillWindow(desktop_icons[window_no - menu_icons.length]);
   } else {
     window_id = fillWindow(window_no);
   }
+  // The fullscreen argument opens the window in fullscreen mode
   if (window.location.search.substr(2) == "&fullscreen") {
     maximizeWindow(window_id);
     toggleMenu();
