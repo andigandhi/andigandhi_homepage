@@ -492,7 +492,8 @@ function createIcons() {
 
 // Allows to open Windows using direct links
 function openLinkedWindow() {
-  let window_no = window.location.search.substr(1);
+  let getParams = window.location.search.substr(1).split("&");
+  let window_no = getParams[0];
   if (window_no === "") {
     fillWindow(1);
     return;
@@ -523,7 +524,7 @@ function openLinkedWindow() {
     window_id = fillWindow(window_no);
   }
   // The fullscreen argument opens the window in fullscreen mode
-  if (window.location.search.substr(2) == "&fullscreen") {
+  if (getParams[1] == "fullscreen") {
     maximizeWindow(window_id);
     toggleMenu();
   }
