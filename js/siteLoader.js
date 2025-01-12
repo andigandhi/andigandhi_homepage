@@ -530,8 +530,8 @@ function openLinkedWindow() {
   }
 }
 
-// Set the language of the page
-setLanguage();
+// Set the language of the page -> Disabled, German only
+//setLanguage();
 
 // Creates all the Desktop Icons
 createIcons();
