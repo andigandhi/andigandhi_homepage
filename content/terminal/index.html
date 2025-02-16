@@ -1,32 +1,31 @@
-<!doctype html>
-<title>Basic Emulator</title><!-- not BASIC! -->
-<link rel="stylesheet" href="v86.css">
+<!doctype html> <title>Basic Emulator</title
+><!-- not BASIC! -->
+<link rel="stylesheet" href="v86.css" />
 <script src="build/libv86.js"></script>
 <script>
-"use strict";
+    "use strict";
 
-window.onload = function()
-{
-    var emulator = window.emulator = new V86({
-        wasm_path: "build/v86.wasm",
-        memory_size: 320 * 1024 * 1024,
-        vga_memory_size: 20 * 1024 * 1024,
-        screen_container: document.getElementById("screen_container"),
-        bios: {
-            url: "bios/seabios.bin",
-        },
-        vga_bios: {
-            url: "bios/vgabios.bin",
-        },
-        initial_state: {
-            url: "images/buildroot.bin.zst",
-        },
-        autostart: true,
-    });
-}
+    window.onload = function () {
+        var emulator = (window.emulator = new V86({
+            wasm_path: "build/v86.wasm",
+            memory_size: 320 * 1024 * 1024,
+            vga_memory_size: 20 * 1024 * 1024,
+            screen_container: document.getElementById("screen_container"),
+            bios: {
+                url: "bios/seabios.bin",
+            },
+            vga_bios: {
+                url: "bios/vgabios.bin",
+            },
+            initial_state: {
+                url: "images/buildroot.bin.zst",
+            },
+            autostart: true,
+        }));
+    };
 </script>
 
 <div id="screen_container">
-    <div id="screen"style="position: absolute; top: 0; left: 0;"></div>
-    <canvas id="vga"></canvas>
+    <div id="screen" style="position: absolute; top: 0; left: 0"></div>
+    <canvas style="display: none"></canvas>
 </div>
