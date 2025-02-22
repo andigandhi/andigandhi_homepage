@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Dirtyline";
+    src:
+        local("Dirtyline"),
+        url("Dirtyline.woff") format("woff");
+}
+
+body {
+    background-color: #39a4b6;
+    // background-image: url(img/bg.jpg);
+    color: #fef57f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: #fef57f;
+}
+
+h1, h2 {
+    font-family: Dirtyline;
+}
+
+h2 {
+    margin-top: 50pt;
+}
+
+#italien-flagge {
+    background-color: #fff;
+    width: 70px;
+    height: 500px;
+}
+
+/* Thin Italian flag */
+.italian-flag {
+    display: flex;
+    flex-direction: row; /* Arrange colors horizontally */
+    width: 30px; /* Set the width of the flag */
+    height: 100%; /* Full height of the page */
+    position: fixed;
+    left: 0; /* Position on the right side */
+    top: 0; /* Start at the top */
+}
+
+.green,
+.white,
+.red {
+    flex: 1;
+    height: 100%;
+}
+
+.green {
+    background-color: #008c45;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.red {
+    background-color: #cd212a;
+}
+
+.content {
+    margin-left: 40px;
+    margin-right: 10px;
+    width: 90%;
+    margin: auto;
+    max-width: 1000px;
+    text-align: justify;
+}
+
+
+/* Base styling for expandable divs */
+.expandableDiv {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+/* When expanded, add vertical padding */
+.expandableDiv.expanded {
+    padding: 20px;
+}
+/* Styling for the clickable text */
+.toggleText {
+    cursor: pointer;
+    margin-bottom: 5px;
+}

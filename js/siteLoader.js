@@ -12,6 +12,7 @@ var menu_icons = [
     "sonderzeichen.png",
   ],
   ["Troetpty", "content/mastodon/index.html", "mastodon.png"],
+  ["Italien", "content/italien/index.html", "italien.png"],
   ["Altes", "", ""],
   ["Wichteln", "content/wichteln/index.php", "wichteln.png"],
   [
@@ -71,6 +72,7 @@ var desktop_icons = [
   ["Troetpty", "content/mastodon/index.html", "mastodon.png"],
   ["Wetter", "https://wttr.in/", "wetter.png", 1000, 700],
   ["Coole Websites", "content/links.html", "seiten.png"],
+  ["Italien", "content/italien/index.html", "italien.png"],
   ["", "", ""],
   ["WLAN-Router", "content/wlan.html", "wlan.png"],
   [
