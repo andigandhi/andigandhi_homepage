@@ -3,7 +3,7 @@
 var menu_icons = [
   ["Menü", "", ""],
   ["Start / News", "content/index.html", "start.png"],
-  ["Lebenslauf", "content/lebenslauf/index.html", "lebenslauf.png"],
+  ["My Blog", "https://blog.grasserisen.de", "lebenslauf.png", 1200, 800],
   ["Chat", "content/chat/chat.html", "chat.png"],
   ["Paint", "content/paint/paint.html", "paint.png"],
   [
@@ -30,40 +30,13 @@ var menu_icons = [
   ["Changelog", "content-markdown/index.html?site=changelog", "changelog.png"],
   ["Kontakt", "content-markdown/index.html?site=kontakt", "kontakt.png"],
 ];
-var menu_icons_en = [
-  ["Menu", "", ""],
-  ["Start / News", "content/index-en.html", "start.png"],
-  ["Curriculum vitae", "content/lebenslauf/index.html", "lebenslauf.png"],
-  ["Chat", "content/chat/chat.html", "chat.png"],
-  ["Paint", "content/paint/paint.html", "paint.png"],
-  [
-    "Text to $p€c14l ch4r4ct€r Converter",
-    "content/sonderzeichen.html",
-    "sonderzeichen.png",
-  ],
-  ["Troetpty", "content/mastodon/index.html", "mastodon.png"],
-  ["Old Stuff", "", ""],
-  ["Wichteln", "content/wichteln/index.php", "wichteln.png"],
-  [
-    "Autobahn-Rave",
-    "content/autobahnrave/autobahnrave.html",
-    "autobahnrave.png",
-  ],
-  ["Livestream", "content/stream.php", "livestream.png", 820, 490],
-  ["Art", "content/april21/index.php", "kunst.png", 920, 700],
-  ["Happy New Year!", "content/silvester/index.html", "silvester.png"],
-  ["April 1st: Design my Tattoo", "content/tattoo.html", "april.png"],
-  ["Other Stuff", "", ""],
-  ["Credits", "content-markdown/index.html?site=credits", "credits.png"],
-  ["Changelog", "content-markdown/index.html?site=changelog", "changelog.png"],
-  ["Contact", "content-markdown/index.html?site=kontakt", "kontakt.png"],
-];
 
 // The Icons on the desktop, images have to be deposited in /img/ico/
 // ['Name / Name.png','link']
 var desktop_icons = [
   ["Chat", "content/chat/chat.html", "chat.png"],
   ["Paint", "content/paint/paint.html", "paint.png"],
+  ["Blog", "https://blog.grasserisen.de", "lebenslauf.png", 1200, 800],
   ["Juggeparty", "content-markdown/index.html?site=jugge", "jugge.png"],
   ["Kunst", "content/april21/index.php", "kunst.png", 920, 700],
   ["Terminal", "content/terminal/index.html", "terminal.png"],
@@ -71,7 +44,7 @@ var desktop_icons = [
   ["Livestream", "content/stream.php", "livestream.png"],
   ["Troetpty", "content/mastodon/index.html", "mastodon.png"],
   ["Wetter", "https://wttr.in/", "wetter.png", 1000, 700],
-  ["Coole Websites", "content/links.html", "seiten.png"],
+  ["Cool Websites", "content/links.html", "seiten.png"],
   ["Italien", "content/italien/index.html", "italien.png"],
   ["", "", ""],
   ["WLAN-Router", "content/wlan.html", "wlan.png"],
@@ -83,40 +56,6 @@ var desktop_icons = [
     210,
   ],
 ];
-var desktop_icons_en = [
-  ["Chat", "content/chat/chat.html", "chat.png"],
-  ["Paint", "content/paint/paint.html", "paint.png"],
-  ["Party!!", "content-markdown/index.html?site=jugge", "jugge.png"],
-  ["Art", "content/april21/index.php", "kunst.png", 920, 700],
-  ["Terminal", "content/terminal/index.html", "terminal.png"],
-  ["", "", ""],
-  ["Livestream", "content/stream.php", "livestream.png"],
-  ["Troetpty", "content/mastodon/index.html", "mastodon.png"],
-  ["Weather", "https://wttr.in/", "wetter.png", 1000, 700],
-  ["Cool Websites", "content/links.html", "seiten.png"],
-  ["", "", ""],
-  ["WiFi-Router", "content/wlan.html", "wlan.png"],
-  [
-    "Music",
-    "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/927233515&color=%23db699b&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
-    "musik.png",
-    816,
-    210,
-  ],
-  [
-    "Friends",
-    "content-markdown/index.html?site=friends",
-    "internet-friends.png",
-  ],
-];
-
-function setLanguage() {
-  var userLang = navigator.language || navigator.userLanguage;
-  if (userLang != "de") {
-    menu_icons = menu_icons_en;
-    desktop_icons = desktop_icons_en;
-  }
-}
 
 // ------ Methods for the window divs ------
 
@@ -531,9 +470,6 @@ function openLinkedWindow() {
     toggleMenu();
   }
 }
-
-// Set the language of the page -> Disabled, German only
-//setLanguage();
 
 // Creates all the Desktop Icons
 createIcons();
